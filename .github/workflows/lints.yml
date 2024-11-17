@@ -1,0 +1,31 @@
+name: Lints
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  checks: write
+  contents: write
+
+jobs:
+  run-linters:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: 📚 Checkout Main Code 📚
+        uses: actions/checkout@v4
+
+      - name: 🛠️ Run Setup 🛠️
+        uses: ./.github/actions/setup
+
+      - name: 🚀 Run linters 🚀
+        uses: wearerequired/lint-action@v2
+        with:
+          prettier: true
+          eslint: true
+          eslint_args: '--ignore-path .eslintignore'
