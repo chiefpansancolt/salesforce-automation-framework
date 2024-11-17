@@ -1,12 +1,12 @@
 {
-  "packageDirectories": [
-    {
-      "path": "src",
-      "default": true
-    }
-  ],
-  "name": "salesforce-automation-framework",
-  "namespace": "",
-  "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "62.0"
+	"packageDirectories": [
+		{
+			"path": "src",
+			"default": true
+		}
+	],
+	"name": "salesforce-automation-framework",
+	"namespace": "",
+	"sfdcLoginUrl": "https://login.salesforce.com",
+	"sourceApiVersion": "62.0"
 }

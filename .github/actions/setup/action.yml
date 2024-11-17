@@ -1,9 +1,9 @@
-name: "Setup Steps"
-description: "This action setups all the common libraries and authentication"
+name: 'Setup Steps'
+description: 'This action setups all the common libraries and authentication'
 
 runs:
-  using: "composite"
-  steps:  
+  using: 'composite'
+  steps:
     - name: 🐢 Install pnpm 🐢
       uses: pnpm/action-setup@v3
       with:
@@ -15,7 +15,7 @@ runs:
       with:
         node-version: 20
         cache: pnpm
-    
+
     - name: 🐢 Install Node Package Dependencies 🐢
       shell: bash
       run: pnpm install
