@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Trigger_Pipeline__c</fullName>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Trigger Pipeline</label>
+    <referenceTo>Trigger_Pipeline__mdt</referenceTo>
+    <relationshipLabel>Trigger Handlers</relationshipLabel>
+    <relationshipName>Trigger_Handlers</relationshipName>
+    <required>false</required>
+    <type>MetadataRelationship</type>
+    <unique>false</unique>
+</CustomField>
