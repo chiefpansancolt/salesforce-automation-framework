@@ -1,34 +1,32 @@
 {
-  "name": "salesforce-automation-framework",
-  "private": false,
-  "version": "0.0.0",
-  "description": "Salesforce Automation Framework",
-  "scripts": {
-    "lint": "eslint **/{aura,lwc}/**/*.js",
-    "test": "npm run test:unit",
-    "test:unit": "sfdx-lwc-jest",
-    "test:unit:watch": "sfdx-lwc-jest --watch",
-    "test:unit:debug": "sfdx-lwc-jest --debug",
-    "test:unit:coverage": "sfdx-lwc-jest --coverage",
-    "prettier": "prettier --write \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
-    "prettier:verify": "prettier --check \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
-    "pmd:check": "pmd check -f html -d src/classes -R .pmdrc.xml -r pmd-result.html && pnpm run pmd:open",
-    "pmd:open": "open pmd-result.html"
-  },
-  "devDependencies": {
-    "@lwc/eslint-plugin-lwc": "^1.1.2",
-    "@prettier/plugin-xml": "^3.2.2",
-    "@salesforce/eslint-config-lwc": "^3.2.3",
-    "@salesforce/eslint-plugin-aura": "^2.0.0",
-    "@salesforce/eslint-plugin-lightning": "^1.0.0",
-    "@salesforce/sfdx-lwc-jest": "^5.1.0",
-    "eslint": "^9.9.1",
-    "eslint-plugin-import": "^2.25.4",
-    "eslint-plugin-jest": "^28.8.1",
-    "prettier": "^3.3.3",
-    "prettier-plugin-apex": "^2.0.1"
-  },
-  "dependencies": {
-    "global": "^4.4.0"
-  }
+	"name": "salesforce-automation-framework",
+	"private": false,
+	"version": "0.0.0",
+	"description": "Salesforce Automation Framework",
+	"scripts": {
+		"lint": "eslint **/{aura,lwc}/**/*.js",
+		"test": "npm run test:unit",
+		"test:unit": "sfdx-lwc-jest",
+		"test:unit:watch": "sfdx-lwc-jest --watch",
+		"test:unit:debug": "sfdx-lwc-jest --debug",
+		"test:unit:coverage": "sfdx-lwc-jest --coverage",
+		"prettier": "prettier --write \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,yaml,yml}\"",
+		"prettier:verify": "prettier --check \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,yaml,yml}\"",
+		"pmd:check": "pmd check -f html -d src/classes -R .pmdrc.xml -r pmd-result.html && pnpm run pmd:open",
+		"pmd:open": "open pmd-result.html",
+		"update-dependencies": "ncu -u && pnpm install"
+	},
+	"devDependencies": {
+		"@lwc/eslint-plugin-lwc": "^1.8.2",
+		"@prettier/plugin-xml": "^3.4.1",
+		"@salesforce/eslint-config-lwc": "^3.6.0",
+		"@salesforce/eslint-plugin-aura": "^2.1.0",
+		"@salesforce/eslint-plugin-lightning": "^1.0.0",
+		"@salesforce/sfdx-lwc-jest": "^7.0.1",
+		"eslint": "^9.15.0",
+		"eslint-plugin-import": "^2.31.0",
+		"eslint-plugin-jest": "^28.9.0",
+		"prettier": "^3.3.3",
+		"prettier-plugin-apex": "^2.2.2"
+	}
 }

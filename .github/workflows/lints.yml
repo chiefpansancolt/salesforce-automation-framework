@@ -27,5 +27,3 @@ jobs:
         uses: wearerequired/lint-action@v2
         with:
           prettier: true
-          eslint: true
-          eslint_args: '--ignore-path .eslintignore'
