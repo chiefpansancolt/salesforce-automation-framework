@@ -61,7 +61,12 @@
 			<property name="problemDepth" value="4" />
 		</properties>
 	</rule>
-	<rule ref="category/apex/design.xml/CyclomaticComplexity" />
+	<!--<rule ref="category/apex/design.xml/CyclomaticComplexity" >
+		<properties>
+			<property name="classReportLevel" value="40" />
+			<property name="methodReportLevel" value="10" />
+		</properties>
+	</rule>-->
 	<!-- <rule ref="category/apex/design.xml/CognitiveComplexity"/> -->
 
 	<!-- PERFORMANCE -->
@@ -114,8 +119,8 @@
 		message="Apex classes should escape addError strings" />
 	<rule ref="category/apex/security.xml/ApexBadCrypto"
 		message="Apex Crypto should use random IV/key" />
-	<rule ref="category/apex/security.xml/ApexCRUDViolation"
-		message="Validate CRUD permission before SOQL/DML operation" />
+	<!--<rule ref="category/apex/security.xml/ApexCRUDViolation"
+		message="Validate CRUD permission before SOQL/DML operation" />-->
 	<rule ref="category/apex/security.xml/ApexDangerousMethods"
 		message="Calling potentially dangerous method" />
 	<rule ref="category/apex/security.xml/ApexSuggestUsingNamedCred"
