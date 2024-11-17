@@ -1,9 +1,23 @@
+/**
+ * This class manages the trigger pipeline execution by processing trigger handlers
+ * in a specified sequence for the given object type. It includes pre-processing, 
+ * processing, and post-processing phases, handling DML operations and logging errors.
+ * 
+ * @author Christopher Pezza (@chiefpansancolt)
+ * @since 2024-11-17
+ * @group Trigger Framework
+ */
 public without sharing class TriggerPipeline extends ADMLDataProvider {
 	private Set<String> executedHandlers = new Set<String>();
     private List<ATriggerHandler> triggerHandlers = null;
 	private TriggerData triggerData;
     private List<Trigger_Pipeline__mdt> pipeline;
 
+    /**
+     * Constructor that initializes trigger data and pipeline metadata for a given object type.
+     * It also executes the pipeline if trigger handlers are available.
+	 * @param objectType The <code>sObjectType</code> the pipeline is executing for
+     */
     public TriggerPipeline(sObjectType objectType) {
 		this.triggerData = new TriggerData(Trigger.new, Trigger.old, Trigger.newMap, Trigger.oldMap);
         this.pipeline = getPipeline(objectType);
@@ -13,6 +27,9 @@ public without sharing class TriggerPipeline extends ADMLDataProvider {
         }
     }
 
+    /**
+     * Executes the trigger pipeline by calling pre-processing, processing, and post-processing methods.
+     */
 	private void executePipeline() {
         preProcessing();
 
@@ -22,6 +39,9 @@ public without sharing class TriggerPipeline extends ADMLDataProvider {
 		}
     }
 
+    /**
+     * Pre-processes the pipeline by determining which handlers are valid and should be executed.
+     */
 	private void preProcessing() {
         List<ATriggerHandler> validHandlers = new List<ATriggerHandler>();
 
@@ -43,6 +63,9 @@ public without sharing class TriggerPipeline extends ADMLDataProvider {
         this.triggerHandlers = validHandlers;
     }
 
+    /**
+     * Processes each valid handler and executes its logic, ensuring no double execution.
+     */
 	private void processing() {
         for (ATriggerHandler handler : this.triggerHandlers) {
             String contextKey = getContextKey(handler);
@@ -63,6 +86,9 @@ public without sharing class TriggerPipeline extends ADMLDataProvider {
         }
     }
 
+    /**
+     * Post-processes the handlers, merging their providers and executing DML operations.
+     */
 	private void postProcessing() {
 		for (ATriggerHandler handler : this.triggerHandlers) {
 			mergeProviders(handler);
@@ -75,10 +101,21 @@ public without sharing class TriggerPipeline extends ADMLDataProvider {
 		}
 	}
 
+    /**
+     * Generates a unique context key for each handler based on its type and the current trigger operation.
+     * @param handler <code>ITriggerHandler</code> The trigger handler.
+     * @return `String`
+     */
 	private static String getContextKey(ITriggerHandler handler) {
         return handler.getType().getName() + '_' + Trigger.operationType.name();
     }
 
+    /**
+     * Retrieves the pipeline metadata based on the object type, operation, and sequence (before/after).
+     * @param objectType The <code>sObjectType</code> the pipeline is executing for
+     * @return `List<Trigger_Pipeline__mdt>`
+     */
+	@SuppressWarnings('PMD.ApexSOQLInjection')
 	private static List<Trigger_Pipeline__mdt> getPipeline(sObjectType objectType) {
 		String objectName = objectType.getDescribe().getName();
 		String pipelineFieldName = getSequenceIndicator() + '_' + getOperation() + '_Enabled__c';
@@ -93,6 +130,10 @@ public without sharing class TriggerPipeline extends ADMLDataProvider {
 		return Database.query(query, AccessLevel.SYSTEM_MODE);
 	}
 
+    /**
+     * Returns the current operation type (Insert, Update, Delete, Undelete) based on the trigger context.
+     * @return `String`
+     */
 	private static String getOperation() {
 		if (Trigger.isInsert) {
 			return INSERT_OPERATION;
@@ -105,6 +146,10 @@ public without sharing class TriggerPipeline extends ADMLDataProvider {
 		return UNDELETE_OPERATION;
 	}
 
+    /**
+     * Returns the sequence indicator based on whether the trigger is 'before' or 'after'.
+     * @return `String`
+     */
 	private static String getSequenceIndicator() {
 		if (Trigger.isBefore) {
 			return BEFORE;
