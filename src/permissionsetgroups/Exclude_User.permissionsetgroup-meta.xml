@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Used to Exclude runs of all types.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Exclude User</label>
+    <permissionSets>Exclude_Flow</permissionSets>
+    <permissionSets>Exclude_Trigger</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

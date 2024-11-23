@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Exclude_Trigger</name>
+    </customPermissions>
+    <description>When assigned to a User, then any trigger using this Permission to bypass will not execute for the user.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Exclude Trigger</label>
+</PermissionSet>
