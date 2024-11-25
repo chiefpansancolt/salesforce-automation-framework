@@ -4,12 +4,7 @@
 	"version": "0.0.0",
 	"description": "Salesforce Automation Framework",
 	"scripts": {
-		"lint": "eslint **/{aura,lwc}/**/*.js",
-		"test": "pnpm run test:unit",
-		"test:unit": "sfdx-lwc-jest",
-		"test:unit:watch": "sfdx-lwc-jest --watch",
-		"test:unit:debug": "sfdx-lwc-jest --debug",
-		"test:unit:coverage": "sfdx-lwc-jest --coverage",
+		"test": "sf apex run test -l RunLocalTests -c -y -v -w 30 -d .sfdx/tools/testresults/apex",
 		"prettier": "prettier --write \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,yaml,yml}\"",
 		"prettier:verify": "prettier --check \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,yaml,yml}\"",
 		"pmd:check": "pmd check -f html -d src/classes -R .pmdrc.xml -r pmd-result.html --no-fail-on-violation && pnpm run pmd:open",

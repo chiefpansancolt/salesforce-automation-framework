@@ -5,5 +5,5 @@
  * @group Tests Utilities
  */
 public with sharing class TestObjectHandler {
-    public static ATriggerHandler mockHandler;
+	public static ATriggerHandler mockHandler;
 }

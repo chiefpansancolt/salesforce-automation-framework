@@ -10,7 +10,7 @@ public with sharing class TriggerFrameworkTestQueryFactory {
 	 * Query all Error Logs created
 	 * @return  `List<Error_Log__c>`
 	 */
-    public static List<Error_Log__c> getErrorLogs() {
+	public static List<Error_Log__c> getErrorLogs() {
 		return [
 			SELECT
 				Id,
@@ -35,7 +35,7 @@ public with sharing class TriggerFrameworkTestQueryFactory {
 	/**
 	 * Get list of all Accounts.
 	 * @return  `List<Account>`
-	 */	
+	 */
 	public static List<Account> getAccounts() {
 		return [SELECT Id, Name FROM Account];
 	}
@@ -43,11 +43,10 @@ public with sharing class TriggerFrameworkTestQueryFactory {
 	/**
 	 * Method to return Count of Test Objects
 	 * @return  `Decimal`
-	 */	
+	 */
 	public static Decimal getTestObjectCount() {
 		return [SELECT COUNT() FROM Test_Object__c];
 	}
-
 
 	/**
 	 * Method to return Name of Test Object

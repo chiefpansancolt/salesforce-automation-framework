@@ -6,7 +6,7 @@
  */
 @IsTest
 public with sharing class TriggerFrameworkTestDataFactory {
-    /**
+	/**
 	 * Method to create an Account for testing.
 	 * @param name <code>String</code> Name of the account to create.
 	 * @param performInsert <code>Boolean</code> Whether to insert the account into the database.
@@ -41,22 +41,22 @@ public with sharing class TriggerFrameworkTestDataFactory {
 	/**
 	 * Find Profile and Create a new User with a profile of Standard User.
 	 * @return  `User`
-	 */	
+	 */
 	public static User createUser() {
 		Profile profile = [SELECT Id FROM Profile WHERE Name = 'Standard User' LIMIT 1];
 
-        User testUser = new User(
-            Username = 'exampleTest12341@example.com',
-            Email = 'testuser@example.com',
+		User testUser = new User(
+			Username = 'exampleTest12341@example.com',
+			Email = 'testuser@example.com',
 			LastName = 'TestUser',
 			EmailEncodingKey = 'UTF-8',
-            Alias = 'testuser',
-            ProfileId = profile.Id,
-            TimeZoneSidKey = 'America/New_York',
-            LocaleSidKey = 'en_US',
-            LanguageLocaleKey = 'en_US'
-        );
-        Database.insert(testUser);
+			Alias = 'testuser',
+			ProfileId = profile.Id,
+			TimeZoneSidKey = 'America/New_York',
+			LocaleSidKey = 'en_US',
+			LanguageLocaleKey = 'en_US'
+		);
+		Database.insert(testUser);
 
 		return testUser;
 	}

@@ -8,8 +8,10 @@
 private class DMLUtilityTest {
 	/**
 	 * A Test DML Data Provider extending ADMLDataProvider
-	 */	
-	private class TestDMLDataProvider extends ADMLDataProvider {}
+	 */
+	private class TestDMLDataProvider extends ADMLDataProvider {
+		/* No implementation needed */
+	}
 
 	@IsTest
 	private static void shouldPerformInsertDml() {

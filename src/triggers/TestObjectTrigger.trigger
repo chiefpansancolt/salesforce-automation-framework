@@ -8,7 +8,7 @@ trigger TestObjectTrigger on Test_Object__c(
 	after undelete
 ) {
 	if (Test.isRunningTest()) {
-		if (ATriggerHandlerTest.runTriggerHandler ) {
+		if (ATriggerHandlerTest.runTriggerHandler) {
 			if (TestObjectHandler.mockHandler != null) {
 				TriggerData triggerData = new TriggerData(Trigger.new, Trigger.old, Trigger.newMap, Trigger.oldMap);
 				TestObjectHandler.mockHandler.process(triggerData);

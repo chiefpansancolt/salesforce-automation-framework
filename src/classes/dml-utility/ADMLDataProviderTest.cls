@@ -8,8 +8,10 @@
 private with sharing class ADMLDataProviderTest {
 	/**
 	 * A Test DML Data Provider extending ADMLDataProvider
-	 */	
-	private class TestDMLDataProvider extends ADMLDataProvider {}
+	 */
+	private class TestDMLDataProvider extends ADMLDataProvider {
+		/* No implementation needed */
+	}
 
 	@IsTest
 	private static void shouldAddInsert() {
@@ -187,35 +189,35 @@ private with sharing class ADMLDataProviderTest {
 	}
 
 	@IsTest
-    private static void shouldMergeWithEmptyProvider() {
-        TestDMLDataProvider provider1 = new TestDMLDataProvider();
-        TestDMLDataProvider provider2 = new TestDMLDataProvider();
+	private static void shouldMergeWithEmptyProvider() {
+		TestDMLDataProvider provider1 = new TestDMLDataProvider();
+		TestDMLDataProvider provider2 = new TestDMLDataProvider();
 
 		Test.startTest();
-        provider1.addInsert(TriggerFrameworkTestDataFactory.createAccount('Test Account 1', false));
-        provider1.mergeProviders(provider2);
+		provider1.addInsert(TriggerFrameworkTestDataFactory.createAccount('Test Account 1', false));
+		provider1.mergeProviders(provider2);
 		Test.stopTest();
 
-        List<String> toInsert = provider1.getToInsert();
-        Assert.areEqual(
+		List<String> toInsert = provider1.getToInsert();
+		Assert.areEqual(
 			1,
 			provider1.getToInsertChunks().get(toInsert[0]).size(),
 			'Expected no changes after merging with empty provider'
 		);
-    }
+	}
 
 	@IsTest
-    private static void shouldHandleEmptyLists() {
-        TestDMLDataProvider provider = new TestDMLDataProvider();
+	private static void shouldHandleEmptyLists() {
+		TestDMLDataProvider provider = new TestDMLDataProvider();
 
 		Test.startTest();
-        provider.addAllInsert(new List<Account>());
-        provider.addAllUpdate(new List<Account>());
-        provider.addAllDelete(new List<Account>());
+		provider.addAllInsert(new List<Account>());
+		provider.addAllUpdate(new List<Account>());
+		provider.addAllDelete(new List<Account>());
 		Test.stopTest();
 
-        Assert.areEqual(0, provider.getToInsert().size(), 'Expected no inserts for empty list');
-        Assert.areEqual(0, provider.getToUpdate().size(), 'Expected no updates for empty list');
-        Assert.areEqual(0, provider.getToDelete().size(), 'Expected no deletes for empty list');
-    }
+		Assert.areEqual(0, provider.getToInsert().size(), 'Expected no inserts for empty list');
+		Assert.areEqual(0, provider.getToUpdate().size(), 'Expected no updates for empty list');
+		Assert.areEqual(0, provider.getToDelete().size(), 'Expected no deletes for empty list');
+	}
 }

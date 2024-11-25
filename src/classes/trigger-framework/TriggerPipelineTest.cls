@@ -9,8 +9,10 @@ public with sharing class TriggerPipelineTest {
 	public static Boolean runTriggerPipeline = false;
 	/**
 	 * A Mock ATriggerHandler to test against
-	 */	
-	private class TestTriggerHandler extends ATriggerHandler {}
+	 */
+	private class TestTriggerHandler extends ATriggerHandler {
+		/* No implementation needed */
+	}
 
 	@IsTest
 	private static void shouldExecuteInsertPipeline() {

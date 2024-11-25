@@ -10,12 +10,14 @@ public with sharing class ATriggerHandlerTest {
 
 	/**
 	 * A Non Overriden Extention of ATriggerHandler to test all base methods in ATriggerHandler
-	 */	
-	private class NonOverridingHandler extends ATriggerHandler {}
+	 */
+	private class NonOverridingHandler extends ATriggerHandler {
+		/* No implementation needed */
+	}
 
 	/**
 	 * A Overridden Extention of ATriggerHandler to Test process in live usage
-	 */	
+	 */
 	private class TestTriggerHandler extends ATriggerHandler {
 		public Boolean beforeInsertCalled = false;
 		public Boolean afterInsertCalled = false;
