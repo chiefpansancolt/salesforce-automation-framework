@@ -161,6 +161,18 @@ public with sharing class TestObjectHandler extends ATriggerHandler {
 }
 ```
 
+This framework supports a grouping DML to avoid to many DML's so you can add 1 or many records to a DML Utility and that DML will be performed at the end of the current pipeline.
+
+Supported DML Utilities are:
+
+- addInsert(sObject)
+- addInsert(sObject, boolean)
+- addInserts(List<sObject>)
+- addUpdate(sObject)
+- addUpdates(List<sObject>)
+- addDlete(sObject)
+- addDeletes(List<sObject>)
+
 3. Once the file is created then you can create the Custom Metadata Type records for the Trigger Pipeline and Trigger Handler
 	1. Create Trigger Pipline record in Custom Metadata Type Trigger_Pipeline__mdt. Be sure to select and enable all contexts you have a pipeline for.
 	2. Now create a Trigger Handler in Custom Metadata Type Trigger_Handler__mdt and again check off all applicable Trigger Contexts to implement for said Handler.
