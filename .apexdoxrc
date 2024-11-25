@@ -1,7 +1,7 @@
 {
 	"engine": {
 		"title": "Salesforce Automation Architecture",
-		"subtitle": "Documentation of how to implement Automation on the Salesforce Platform from Flows to a Trigger Framework.",
+		"subtitle": "Implement a simple but powerful platform.",
 		"targetDirectory": "${workspaceFolder}/documentation",
 		"source": [
 			{
