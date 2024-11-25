@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Salesforce Automation Architecture</title>
+    <meta charset="UTF-8">
+    <script type="module" src="./assets/index.js"></script>
+    <script type="module" src="./assets/search-idx.js"></script>
+    <script type="module" src="./assets/search.js"></script>
+    <script charset="UTF-8" src="./assets/highlight.js"></script>
+    <script charset="UTF-8" src="./assets/mark.js"></script>
+    <script charset="UTF-8" src="./assets/lunr.js"></script>
+    <link rel="stylesheet" href="./assets/highlight.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/index.css" />
+    <link rel="shortcut icon" type="image/png" href="./assets/favicon.png" />
+  </head>
+
+  <body>
+    <div id="side-bar">
+
+      <div id="logo-container">
+        <div class="title">
+          Salesforce Automation Architecture
+        </div>
+        <img src="assets/logo.png" />
+        <div class="subtitle">
+          Documentation of how to implement Automation on the Salesforce Platform from Flows to a Trigger Framework.
+        </div>
+      </div>
+      <div id="search-wrapper">
+        <div class="search-icon"></div>
+        <input id="search-input" type="text" autocomplete="off" placeholder="Search...">
+      </div>
+      <ul id="search-results" class=""></ul>
+      <div class="navbar">
+        <nav role="navigation">
+          <a class="nav-header" id="home" href="javascript:void(0)" onclick="goToLocation('index.html');">
+            Home
+          </a>
+          <details id="DML_Utility" class="group-name">
+            <summary id="header-DML_Utility" class="nav-header">
+              <span>DML Utility</span>
+            </summary>
+            <ul>
+              <!-- menu items -->
+              <li title="ADMLDataProvider" id="item-ADMLDataProvider" class="nav-item class " onclick="goToLocation('ADMLDataProvider.html');">
+                <a tabindex="1" href="javascript:void(0)">ADMLDataProvider</a>
+              </li>
+              <li title="DMLUtility" id="item-DMLUtility" class="nav-item class " onclick="goToLocation('DMLUtility.html');">
+                <a tabindex="1" href="javascript:void(0)">DMLUtility</a>
+              </li>
+              <li title="IDMLDataProvider" id="item-IDMLDataProvider" class="nav-item class " onclick="goToLocation('IDMLDataProvider.html');">
+                <a tabindex="1" href="javascript:void(0)">IDMLDataProvider</a>
+              </li>
+            </ul>
+          </details>
+          <details id="Error_Logger" class="group-name">
+            <summary id="header-Error_Logger" class="nav-header">
+              <span>Error Logger</span>
+            </summary>
+            <ul>
+              <!-- menu items -->
+              <li title="ErrorLogger" id="item-ErrorLogger" class="nav-item class " onclick="goToLocation('ErrorLogger.html');">
+                <a tabindex="1" href="javascript:void(0)">ErrorLogger</a>
+              </li>
+            </ul>
+          </details>
+          <details id="Test_Utilities" class="group-name">
+            <summary id="header-Test_Utilities" class="nav-header">
+              <span>Test Utilities</span>
+            </summary>
+            <ul>
+              <!-- menu items -->
+              <li title="TriggerFrameworkTestDataFactory" id="item-TriggerFrameworkTestDataFactory" class="nav-item class " onclick="goToLocation('TriggerFrameworkTestDataFactory.html');">
+                <a tabindex="1" href="javascript:void(0)">TriggerFrameworkTestDataFactory</a>
+              </li>
+              <li title="TriggerFrameworkTestQueryFactory" id="item-TriggerFrameworkTestQueryFactory" class="nav-item class " onclick="goToLocation('TriggerFrameworkTestQueryFactory.html');">
+                <a tabindex="1" href="javascript:void(0)">TriggerFrameworkTestQueryFactory</a>
+              </li>
+            </ul>
+          </details>
+          <details id="Trigger_Framework" class="group-name">
+            <summary id="header-Trigger_Framework" class="nav-header">
+              <span>Trigger Framework</span>
+            </summary>
+            <ul>
+              <!-- menu items -->
+              <li title="ATriggerHandler" id="item-ATriggerHandler" class="nav-item class " onclick="goToLocation('ATriggerHandler.html');">
+                <a tabindex="1" href="javascript:void(0)">ATriggerHandler</a>
+              </li>
+              <li title="ITriggerHandler" id="item-ITriggerHandler" class="nav-item class " onclick="goToLocation('ITriggerHandler.html');">
+                <a tabindex="1" href="javascript:void(0)">ITriggerHandler</a>
+              </li>
+              <li title="TriggerData" id="item-TriggerData" class="nav-item class " onclick="goToLocation('TriggerData.html');">
+                <a tabindex="1" href="javascript:void(0)">TriggerData</a>
+              </li>
+              <li title="TriggerPipeline" id="item-TriggerPipeline" class="nav-item class " onclick="goToLocation('TriggerPipeline.html');">
+                <a tabindex="1" href="javascript:void(0)">TriggerPipeline</a>
+              </li>
+            </ul>
+          </details>
+        </nav>
+      </div>
+    </div>
+    <table id="content">
+      <tr>
+        <td class="scoping-panel">
+          Show: <input type="checkbox" checked="true" id="cbx-all" onclick="toggleAllScopes(this.checked);" />
+          <label for="cbx-all">All</label>&nbsp;&nbsp;
+          <input type="checkbox" checked="true" id="cbx-global" onclick="toggleScope('global', this.checked);" />
+          <label for="cbx-global">
+            global
+          </label>&nbsp;&nbsp;<input type="checkbox" checked="true" id="cbx-public" onclick="toggleScope('public', this.checked);" />
+          <label for="cbx-public">
+            public
+          </label>&nbsp;&nbsp;<input type="checkbox" checked="true" id="cbx-protected" onclick="toggleScope('protected', this.checked);" />
+          <label for="cbx-protected">
+            protected
+          </label>&nbsp;&nbsp;<input type="checkbox" checked="true" id="cbx-private" onclick="toggleScope('private', this.checked);" />
+          <label for="cbx-private">
+            private
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <td class="doc-page">
+
+          <div class="section">
+
+            <h2 class="class-title top-level-type" id="ADMLDataProvider">
+              <span>ADMLDataProvider</span>
+            </h2>
+            <div class="class-container">
+
+              <div class="class-description">
+                Abstract class that provides functionality for managing DML operations (insert, update, delete). This class supports adding operations, performing chunked DML actions, and clearing operations.
+              </div>
+              <div class="class-subtitle">
+                Signature
+              </div>
+              <div class="class-annotations">@SuppressWarnings('PMD.CognitiveComplexity')</div>
+              <div class="class-signature">
+                public abstract inherited sharing class ADMLDataProvider implements IDMLDataProvider
+              </div>
+              <div class="class-subtitle">
+                Author
+              </div>
+              <div class="class-subtitle-description">
+                Christopher Pezza (@chiefpansancolt)
+              </div>
+              <div class="class-subtitle">
+                Since
+              </div>
+              <div class="class-subtitle-description">
+                <li>2024-11-17</li>
+              </div>
+            </div>
+            <div class="subsection methods">
+              <h3 class="subsection-title methods">ADMLDataProvider Methods</h3>
+              <div class="methods-container">
+                <ul class="methods-toc">
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#ADMLDataProvider.clear">
+                      clear ()
+                    </a>
+
+                  </li>
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#ADMLDataProvider.addInsert">
+                      addInsert (obj)
+                    </a>
+
+                  </li>
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#ADMLDataProvider.addInsert_1">
+                      addInsert (obj, immediate)
+                    </a>
+
+                  </li>
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#ADMLDataProvider.addAllInsert">
+                      addAllInsert (objs)
+                    </a>
+
+                  </li>
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#ADMLDataProvider.addUpdate">
+                      addUpdate (obj)
+                    </a>
+
+                  </li>
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#ADMLDataProvider.addAllUpdate">
+                      addAllUpdate (objs)
+                    </a>
+
+                  </li>
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#ADMLDataProvider.addDelete">
+                      addDelete (obj)
+                    </a>
+
+                  </li>
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#ADMLDataProvider.addAllDelete">
+                      addAllDelete (objs)
+                    </a>
+
+                  </li>
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#ADMLDataProvider.getToInsert">
+                      getToInsert ()
+                    </a>
+
+                  </li>
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#ADMLDataProvider.getToUpdate">
+                      getToUpdate ()
+                    </a>
+
+                  </li>
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#ADMLDataProvider.getToDelete">
+                      getToDelete ()
+                    </a>
+
+                  </li>
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#ADMLDataProvider.getToInsertChunks">
+                      getToInsertChunks ()
+                    </a>
+
+                  </li>
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#ADMLDataProvider.getToUpdateChunks">
+                      getToUpdateChunks ()
+                    </a>
+
+                  </li>
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#ADMLDataProvider.getToDeleteChunks">
+                      getToDeleteChunks ()
+                    </a>
+
+                  </li>
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#ADMLDataProvider.mergeProviders">
+                      mergeProviders (additionalProvider)
+                    </a>
+
+                  </li>
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#ADMLDataProvider.clearInsert">
+                      clearInsert ()
+                    </a>
+
+                  </li>
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#ADMLDataProvider.clearUpdate">
+                      clearUpdate ()
+                    </a>
+
+                  </li>
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#ADMLDataProvider.clearDelete">
+                      clearDelete ()
+                    </a>
+
+                  </li>
+                  <li class="method private">
+                    <a class="methods-toc__entry " href="#ADMLDataProvider.getInsertAction">
+                      getInsertAction ()
+                    </a>
+
+                  </li>
+                  <li class="method private">
+                    <a class="methods-toc__entry " href="#ADMLDataProvider.getUpdateAction">
+                      getUpdateAction ()
+                    </a>
+
+                  </li>
+                  <li class="method private">
+                    <a class="methods-toc__entry " href="#ADMLDataProvider.getDeleteAction">
+                      getDeleteAction ()
+                    </a>
+
+                  </li>
+                </ul>
+                <div class="method public">
+                  <h4 class="method-title " id="ADMLDataProvider.clear">
+                    <span>clear()</span>
+                  </h4>
+                  <div class="method-description">
+                    Clears all DML operations (insert, update, delete).
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    public virtual void clear()
+                  </div>
+                </div>
+                <div class="method public">
+                  <h4 class="method-title " id="ADMLDataProvider.addInsert">
+                    <span>addInsert(obj)</span>
+                  </h4>
+                  <div class="method-description">
+                    Adds a single SObject to the insert action list.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    public virtual void addInsert(SObject obj)
+                  </div>
+                  <div class="method-subtitle">Parameters</div>
+                  <div class="param-name">obj</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">SObject</code>
+                  </div>
+                  <div class="param-description">The SObject to be inserted.</div>
+                </div>
+                <div class="method public">
+                  <h4 class="method-title " id="ADMLDataProvider.addInsert_1">
+                    <span>addInsert(obj, immediate)</span>
+                  </h4>
+                  <div class="method-description">
+                    Adds a single SObject to the insert action list. Optionally performs immediate insert if specified.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    public virtual void addInsert(SObject obj, Boolean immediate)
+                  </div>
+                  <div class="method-subtitle">Parameters</div>
+                  <div class="param-name">obj</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">SObject</code>
+                  </div>
+                  <div class="param-description">The SObject to be inserted.</div>
+                  <div class="param-name">immediate</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">Boolean</code>
+                  </div>
+                  <div class="param-description">If true, performs the insert immediately; otherwise, adds to the action list.</div>
+                </div>
+                <div class="method public">
+                  <h4 class="method-title " id="ADMLDataProvider.addAllInsert">
+                    <span>addAllInsert(objs)</span>
+                  </h4>
+                  <div class="method-description">
+                    Adds multiple SObjects to the insert action list.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    public virtual void addAllInsert(List&lt;SObject&gt; objs)
+                  </div>
+                  <div class="method-subtitle">Parameters</div>
+                  <div class="param-name">objs</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">List&lt;SObject&gt;</code>
+                  </div>
+                  <div class="param-description">The list of SObjects to be inserted.</div>
+                </div>
+                <div class="method public">
+                  <h4 class="method-title " id="ADMLDataProvider.addUpdate">
+                    <span>addUpdate(obj)</span>
+                  </h4>
+                  <div class="method-description">
+                    Adds a single SObject to the update action list.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    public virtual void addUpdate(SObject obj)
+                  </div>
+                  <div class="method-subtitle">Parameters</div>
+                  <div class="param-name">obj</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">SObject</code>
+                  </div>
+                  <div class="param-description">The SObject to be updated.</div>
+                </div>
+                <div class="method public">
+                  <h4 class="method-title " id="ADMLDataProvider.addAllUpdate">
+                    <span>addAllUpdate(objs)</span>
+                  </h4>
+                  <div class="method-description">
+                    Adds multiple SObjects to the update action list.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    public virtual void addAllUpdate(List&lt;SObject&gt; objs)
+                  </div>
+                  <div class="method-subtitle">Parameters</div>
+                  <div class="param-name">objs</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">List&lt;SObject&gt;</code>
+                  </div>
+                  <div class="param-description">The list of SObjects to be updated.</div>
+                </div>
+                <div class="method public">
+                  <h4 class="method-title " id="ADMLDataProvider.addDelete">
+                    <span>addDelete(obj)</span>
+                  </h4>
+                  <div class="method-description">
+                    Adds a single SObject to the delete action list.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    public virtual void addDelete(SObject obj)
+                  </div>
+                  <div class="method-subtitle">Parameters</div>
+                  <div class="param-name">obj</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">SObject</code>
+                  </div>
+                  <div class="param-description">The SObject to be deleted.</div>
+                </div>
+                <div class="method public">
+                  <h4 class="method-title " id="ADMLDataProvider.addAllDelete">
+                    <span>addAllDelete(objs)</span>
+                  </h4>
+                  <div class="method-description">
+                    Adds multiple SObjects to the delete action list.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    public virtual void addAllDelete(List&lt;SObject&gt; objs)
+                  </div>
+                  <div class="method-subtitle">Parameters</div>
+                  <div class="param-name">objs</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">List&lt;SObject&gt;</code>
+                  </div>
+                  <div class="param-description">The list of SObjects to be deleted.</div>
+                </div>
+                <div class="method public">
+                  <h4 class="method-title " id="ADMLDataProvider.getToInsert">
+                    <span>getToInsert()</span>
+                  </h4>
+                  <div class="method-description">
+                    Returns a list of SObject names scheduled for insert.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    public virtual List&lt;String&gt; getToInsert()
+                  </div>
+                  <div class="method-subtitle">
+                    Returns
+                  </div>
+                  <div class="method-subtitle-description">
+                    <code class="code-inline">List&lt;String&gt;</code>
+                  </div>
+                </div>
+                <div class="method public">
+                  <h4 class="method-title " id="ADMLDataProvider.getToUpdate">
+                    <span>getToUpdate()</span>
+                  </h4>
+                  <div class="method-description">
+                    Returns a list of SObject names scheduled for update.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    public virtual List&lt;String&gt; getToUpdate()
+                  </div>
+                  <div class="method-subtitle">
+                    Returns
+                  </div>
+                  <div class="method-subtitle-description">
+                    <code class="code-inline">List&lt;String&gt;</code>
+                  </div>
+                </div>
+                <div class="method public">
+                  <h4 class="method-title " id="ADMLDataProvider.getToDelete">
+                    <span>getToDelete()</span>
+                  </h4>
+                  <div class="method-description">
+                    Returns a list of SObject names scheduled for delete.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    public virtual List&lt;String&gt; getToDelete()
+                  </div>
+                  <div class="method-subtitle">
+                    Returns
+                  </div>
+                  <div class="method-subtitle-description">
+                    <code class="code-inline">List&lt;String&gt;</code>
+                  </div>
+                </div>
+                <div class="method public">
+                  <h4 class="method-title " id="ADMLDataProvider.getToInsertChunks">
+                    <span>getToInsertChunks()</span>
+                  </h4>
+                  <div class="method-description">
+                    Returns a map of SObject chunks scheduled for insert.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    public virtual Map&lt;String, List&lt;SObject&gt;&gt; getToInsertChunks()
+                  </div>
+                  <div class="method-subtitle">
+                    Returns
+                  </div>
+                  <div class="method-subtitle-description">
+                    <code class="code-inline">Map&lt;String, List&lt;SObject&gt;&gt;</code>
+                  </div>
+                </div>
+                <div class="method public">
+                  <h4 class="method-title " id="ADMLDataProvider.getToUpdateChunks">
+                    <span>getToUpdateChunks()</span>
+                  </h4>
+                  <div class="method-description">
+                    Returns a map of SObject chunks scheduled for update.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    public virtual Map&lt;String, List&lt;SObject&gt;&gt; getToUpdateChunks()
+                  </div>
+                  <div class="method-subtitle">
+                    Returns
+                  </div>
+                  <div class="method-subtitle-description">
+                    <code class="code-inline">Map&lt;String, List&lt;SObject&gt;&gt;</code>
+                  </div>
+                </div>
+                <div class="method public">
+                  <h4 class="method-title " id="ADMLDataProvider.getToDeleteChunks">
+                    <span>getToDeleteChunks()</span>
+                  </h4>
+                  <div class="method-description">
+                    Returns a map of SObject chunks scheduled for delete.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    public virtual Map&lt;String, List&lt;SObject&gt;&gt; getToDeleteChunks()
+                  </div>
+                  <div class="method-subtitle">
+                    Returns
+                  </div>
+                  <div class="method-subtitle-description">
+                    <code class="code-inline">Map&lt;String, List&lt;SObject&gt;&gt;</code>
+                  </div>
+                </div>
+                <div class="method public">
+                  <h4 class="method-title " id="ADMLDataProvider.mergeProviders">
+                    <span>mergeProviders(additionalProvider)</span>
+                  </h4>
+                  <div class="method-description">
+                    Merges the operations from another ADMLDataProvider into this one.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    public virtual void mergeProviders(ADMLDataProvider additionalProvider)
+                  </div>
+                  <div class="method-subtitle">Parameters</div>
+                  <div class="param-name">additionalProvider</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">ADMLDataProvider</code>
+                  </div>
+                  <div class="param-description">The provider whose operations will be merged.</div>
+                </div>
+                <div class="method public">
+                  <h4 class="method-title " id="ADMLDataProvider.clearInsert">
+                    <span>clearInsert()</span>
+                  </h4>
+                  <div class="method-description">
+                    Clears insert operations.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    public void clearInsert()
+                  </div>
+                </div>
+                <div class="method public">
+                  <h4 class="method-title " id="ADMLDataProvider.clearUpdate">
+                    <span>clearUpdate()</span>
+                  </h4>
+                  <div class="method-description">
+                    Clears update operations.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    public void clearUpdate()
+                  </div>
+                </div>
+                <div class="method public">
+                  <h4 class="method-title " id="ADMLDataProvider.clearDelete">
+                    <span>clearDelete()</span>
+                  </h4>
+                  <div class="method-description">
+                    Clears delete operations.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    public void clearDelete()
+                  </div>
+                </div>
+                <div class="method private">
+                  <h4 class="method-title " id="ADMLDataProvider.getInsertAction">
+                    <span>getInsertAction()</span>
+                  </h4>
+                  <div class="method-description">
+                    Retrieves the insert action, initializing it if necessary.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    private DMLAction getInsertAction()
+                  </div>
+                  <div class="method-subtitle">
+                    Returns
+                  </div>
+                  <div class="method-subtitle-description">
+                    <code class="code-inline">DMLAction</code>
+                  </div>
+                </div>
+                <div class="method private">
+                  <h4 class="method-title " id="ADMLDataProvider.getUpdateAction">
+                    <span>getUpdateAction()</span>
+                  </h4>
+                  <div class="method-description">
+                    Retrieves the update action, initializing it if necessary.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    private DMLAction getUpdateAction()
+                  </div>
+                  <div class="method-subtitle">
+                    Returns
+                  </div>
+                  <div class="method-subtitle-description">
+                    <code class="code-inline">DMLAction</code>
+                  </div>
+                </div>
+                <div class="method private">
+                  <h4 class="method-title " id="ADMLDataProvider.getDeleteAction">
+                    <span>getDeleteAction()</span>
+                  </h4>
+                  <div class="method-description">
+                    Retrieves the delete action, initializing it if necessary.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    private DMLAction getDeleteAction()
+                  </div>
+                  <div class="method-subtitle">
+                    Returns
+                  </div>
+                  <div class="method-subtitle-description">
+                    <code class="code-inline">DMLAction</code>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section">
+
+            <h2 class="class-title " id="ADMLDataProvider.DMLAction">
+              <span>ADMLDataProvider.DMLAction</span>
+            </h2>
+            <div class="class-container">
+
+              <div class="class-description">
+                Inner class to handle DML operations for objects, including adding operations, calculating chunks, and clearing operations.
+              </div>
+              <div class="class-subtitle">
+                Signature
+              </div>
+
+              <div class="class-signature">
+                private virtual class DMLAction
+              </div>
+            </div>
+            <div class="subsection properties ADMLDataProvider_DMLAction">
+              <h3 class="subsection-title properties">ADMLDataProvider.DMLAction Properties</h3>
+              <table class="attributes-table properties">
+
+                <tr>
+                  <th>Name</th>
+                  <th>Signature</th>
+
+
+                </tr>
+                <tr class="property ">
+                  <td class="attribute-name"><span>operations</span></td>
+                  <td>
+                    <div class="attribute-signature">
+                      protected List&lt;Object&gt; operations
+                    </div>
+                  </td>
+
+
+                </tr>
+                <tr class="property ">
+                  <td class="attribute-name"><span>objectChunkMap</span></td>
+                  <td>
+                    <div class="attribute-signature">
+                      protected Map&lt;String, List&lt;SObject&gt;&gt; objectChunkMap
+                    </div>
+                  </td>
+
+
+                </tr>
+                <tr class="property ">
+                  <td class="attribute-name"><span>chunkObjectName</span></td>
+                  <td>
+                    <div class="attribute-signature">
+                      protected List&lt;String&gt; chunkObjectName
+                    </div>
+                  </td>
+
+
+                </tr>
+              </table>
+            </div>
+            <div class="subsection methods">
+              <h3 class="subsection-title methods">ADMLDataProvider.DMLAction Methods</h3>
+              <div class="methods-container">
+                <ul class="methods-toc">
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#ADMLDataProvider.DMLAction.addOperation">
+                      addOperation (obj)
+                    </a>
+
+                  </li>
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#ADMLDataProvider.DMLAction.getObjectNameKeys">
+                      getObjectNameKeys ()
+                    </a>
+
+                  </li>
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#ADMLDataProvider.DMLAction.getObjectChunks">
+                      getObjectChunks ()
+                    </a>
+
+                  </li>
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#ADMLDataProvider.DMLAction.clear">
+                      clear ()
+                    </a>
+
+                  </li>
+                  <li class="method private">
+                    <a class="methods-toc__entry " href="#ADMLDataProvider.DMLAction.calculate">
+                      calculate ()
+                    </a>
+
+                  </li>
+                  <li class="method private">
+                    <a class="methods-toc__entry " href="#ADMLDataProvider.DMLAction.getObjectNameKey">
+                      getObjectNameKey (tp)
+                    </a>
+
+                  </li>
+                  <li class="method private">
+                    <a class="methods-toc__entry " href="#ADMLDataProvider.DMLAction.calculateChunks">
+                      calculateChunks ()
+                    </a>
+
+                  </li>
+                </ul>
+                <div class="method public">
+                  <h4 class="method-title " id="ADMLDataProvider.DMLAction.addOperation">
+                    <span>addOperation(obj)</span>
+                  </h4>
+                  <div class="method-description">
+                    Adds a single operation to the list of operations.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    public void addOperation(Object obj)
+                  </div>
+                  <div class="method-subtitle">Parameters</div>
+                  <div class="param-name">obj</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">Object</code>
+                  </div>
+                  <div class="param-description">The object to be added.</div>
+                </div>
+                <div class="method public">
+                  <h4 class="method-title " id="ADMLDataProvider.DMLAction.getObjectNameKeys">
+                    <span>getObjectNameKeys()</span>
+                  </h4>
+                  <div class="method-description">
+                    Returns the object names for the chunks of operations.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    public List&lt;String&gt; getObjectNameKeys()
+                  </div>
+                  <div class="method-subtitle">
+                    Returns
+                  </div>
+                  <div class="method-subtitle-description">
+                    <code class="code-inline">List&lt;String&gt;</code>
+                  </div>
+                </div>
+                <div class="method public">
+                  <h4 class="method-title " id="ADMLDataProvider.DMLAction.getObjectChunks">
+                    <span>getObjectChunks()</span>
+                  </h4>
+                  <div class="method-description">
+                    Returns a map of chunks for each object.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    public Map&lt;String, List&lt;SObject&gt;&gt; getObjectChunks()
+                  </div>
+                  <div class="method-subtitle">
+                    Returns
+                  </div>
+                  <div class="method-subtitle-description">
+                    <code class="code-inline">Map&lt;String, List&lt;SObject&gt;&gt;</code>
+                  </div>
+                </div>
+                <div class="method public">
+                  <h4 class="method-title " id="ADMLDataProvider.DMLAction.clear">
+                    <span>clear()</span>
+                  </h4>
+                  <div class="method-description">
+                    Clears all operations and chunk data.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    public void clear()
+                  </div>
+                </div>
+                <div class="method private">
+                  <h4 class="method-title " id="ADMLDataProvider.DMLAction.calculate">
+                    <span>calculate()</span>
+                  </h4>
+                  <div class="method-description">
+                    Calculates the object chunks based on the current operations.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    private void calculate()
+                  </div>
+                </div>
+                <div class="method private">
+                  <h4 class="method-title " id="ADMLDataProvider.DMLAction.getObjectNameKey">
+                    <span>getObjectNameKey(tp)</span>
+                  </h4>
+                  <div class="method-description">
+                    Generates the object name for a given SObject type.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    private String getObjectNameKey(SObjectType tp)
+                  </div>
+                  <div class="method-subtitle">Parameters</div>
+                  <div class="param-name">tp</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">SObjectType</code>
+                  </div>
+                  <div class="param-description">The SObject type.</div>
+                  <div class="method-subtitle">
+                    Returns
+                  </div>
+                  <div class="method-subtitle-description">
+                    <code class="code-inline">String</code>
+                  </div>
+                </div>
+                <div class="method private">
+                  <h4 class="method-title " id="ADMLDataProvider.DMLAction.calculateChunks">
+                    <span>calculateChunks()</span>
+                  </h4>
+                  <div class="method-description">
+                    Calculates the chunks for operations by grouping SObjects by their type.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    private virtual void calculateChunks()
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="footer">
+
+          <div>
+            <a href="https://github.com/no-stack-dub-sack/apexdox-vs-code" target="_blank" rel="noopener noreferrer">
+              Powered By ApexDox VS Code
+            </a>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </body>
+
+</html>

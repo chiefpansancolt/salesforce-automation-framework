@@ -1,0 +1,31 @@
+{
+	"engine": {
+		"title": "Salesforce Automation Architecture",
+		"subtitle": "Documentation of how to implement Automation on the Salesforce Platform from Flows to a Trigger Framework.",
+		"targetDirectory": "${workspaceFolder}/documentation",
+		"source": [
+			{
+				"path": "${workspaceFolder}/src/classes"
+			}
+		],
+		"excludes": [
+			"*Test.cls",
+			"Test*"
+		],
+		"sortOrder": "logical",
+		"cleanDir": false,
+		"showTOCSnippets": false,
+		"scope": [
+			"global",
+			"public",
+			"protected",
+			"private"
+		],
+		"port": 8080
+	},
+	"docblock": {
+		"alignItems": false,
+		"spacious": false,
+		"omitDescriptionTag": true
+	}
+}
