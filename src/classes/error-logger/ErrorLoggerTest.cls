@@ -36,11 +36,7 @@ private with sharing class ErrorLoggerTest {
 
 		List<Error_Log__c> results = TriggerFrameworkTestQueryFactory.getErrorLogs();
 		Assert.areEqual(1, results.size(), 'One error log should have been created.');
-		Assert.areEqual(
-			'ErrorLoggerTest.TestException',
-			results[0].Error_Type__c,
-			'Error type should match the exception type.'
-		);
+		Assert.areEqual('ErrorLoggerTest.TestException', results[0].Error_Type__c, 'Error type should match the exception type.');
 		Assert.areEqual('Test Exception Message', results[0].Error_Message__c, 'Error message should match.');
 		Assert.isNotNull(results[0].Stack_Trace__c, 'Stack trace should not be null.');
 		Assert.isNotNull(results[0].Execution_Context__c, 'Execution context should not be null.');

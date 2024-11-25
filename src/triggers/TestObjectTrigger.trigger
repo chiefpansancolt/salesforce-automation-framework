@@ -1,12 +1,4 @@
-trigger TestObjectTrigger on Test_Object__c(
-	before insert,
-	after insert,
-	before update,
-	after update,
-	before delete,
-	after delete,
-	after undelete
-) {
+trigger TestObjectTrigger on Test_Object__c(before insert, after insert, before update, after update, before delete, after delete, after undelete) {
 	if (Test.isRunningTest()) {
 		if (ATriggerHandlerTest.runTriggerHandler) {
 			if (TestObjectHandler.mockHandler != null) {

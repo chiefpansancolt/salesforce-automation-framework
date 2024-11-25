@@ -22,11 +22,7 @@ public with sharing class TriggerPipelineTest {
 		TriggerFrameworkTestDataFactory.createTestObject('Test Trigger Pipeline', true);
 		Test.stopTest();
 
-		Assert.areEqual(
-			1,
-			TriggerFrameworkTestQueryFactory.getTestObjectCount(),
-			'Insert pipeline should have executed and created a record.'
-		);
+		Assert.areEqual(1, TriggerFrameworkTestQueryFactory.getTestObjectCount(), 'Insert pipeline should have executed and created a record.');
 	}
 
 	@IsTest
@@ -54,11 +50,7 @@ public with sharing class TriggerPipelineTest {
 		delete testObject;
 		Test.stopTest();
 
-		Assert.areEqual(
-			0,
-			TriggerFrameworkTestQueryFactory.getTestObjectCount(),
-			'Delete pipeline should have executed and removed the record.'
-		);
+		Assert.areEqual(0, TriggerFrameworkTestQueryFactory.getTestObjectCount(), 'Delete pipeline should have executed and removed the record.');
 	}
 
 	@IsTest
@@ -71,10 +63,6 @@ public with sharing class TriggerPipelineTest {
 		undelete testObject;
 		Test.stopTest();
 
-		Assert.areEqual(
-			1,
-			TriggerFrameworkTestQueryFactory.getTestObjectCount(),
-			'Undelete pipeline should have executed and re-created the record.'
-		);
+		Assert.areEqual(1, TriggerFrameworkTestQueryFactory.getTestObjectCount(), 'Undelete pipeline should have executed and re-created the record.');
 	}
 }

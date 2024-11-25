@@ -61,11 +61,7 @@ private with sharing class ADMLDataProviderTest {
 		Test.stopTest();
 
 		Assert.areEqual(1, provider.getToInsert().size(), 'Expected one chunk in the insert list');
-		Assert.areEqual(
-			2,
-			provider.getToInsertChunks().get(provider.getToInsert()[0]).size(),
-			'Expected two SObjects in the chunk'
-		);
+		Assert.areEqual(2, provider.getToInsertChunks().get(provider.getToInsert()[0]).size(), 'Expected two SObjects in the chunk');
 	}
 
 	@IsTest
@@ -93,11 +89,7 @@ private with sharing class ADMLDataProviderTest {
 		Test.stopTest();
 
 		Assert.areEqual(1, provider.getToUpdate().size(), 'Expected one chunk in the update list');
-		Assert.areEqual(
-			2,
-			provider.getToUpdateChunks().get(provider.getToUpdate()[0]).size(),
-			'Expected two SObjects in the chunk'
-		);
+		Assert.areEqual(2, provider.getToUpdateChunks().get(provider.getToUpdate()[0]).size(), 'Expected two SObjects in the chunk');
 	}
 
 	@IsTest
@@ -125,11 +117,7 @@ private with sharing class ADMLDataProviderTest {
 		Test.stopTest();
 
 		Assert.areEqual(1, provider.getToDelete().size(), 'Expected one SObject in the delete list');
-		Assert.areEqual(
-			2,
-			provider.getToDeleteChunks().get(provider.getToDelete()[0]).size(),
-			'Expected two SObjects in the chunk'
-		);
+		Assert.areEqual(2, provider.getToDeleteChunks().get(provider.getToDelete()[0]).size(), 'Expected two SObjects in the chunk');
 	}
 
 	@IsTest
@@ -171,21 +159,9 @@ private with sharing class ADMLDataProviderTest {
 		List<String> toInsert = provider1.getToInsert();
 		List<String> toUpdate = provider1.getToUpdate();
 		List<String> toDelete = provider1.getToDelete();
-		Assert.areEqual(
-			2,
-			provider1.getToInsertChunks().get(toInsert[0]).size(),
-			'Expected two inserts after merging providers'
-		);
-		Assert.areEqual(
-			2,
-			provider1.getToUpdateChunks().get(toUpdate[0]).size(),
-			'Expected one update after merging providers'
-		);
-		Assert.areEqual(
-			1,
-			provider1.getToDeleteChunks().get(toDelete[0]).size(),
-			'Expected one delete after merging providers'
-		);
+		Assert.areEqual(2, provider1.getToInsertChunks().get(toInsert[0]).size(), 'Expected two inserts after merging providers');
+		Assert.areEqual(2, provider1.getToUpdateChunks().get(toUpdate[0]).size(), 'Expected one update after merging providers');
+		Assert.areEqual(1, provider1.getToDeleteChunks().get(toDelete[0]).size(), 'Expected one delete after merging providers');
 	}
 
 	@IsTest
@@ -199,11 +175,7 @@ private with sharing class ADMLDataProviderTest {
 		Test.stopTest();
 
 		List<String> toInsert = provider1.getToInsert();
-		Assert.areEqual(
-			1,
-			provider1.getToInsertChunks().get(toInsert[0]).size(),
-			'Expected no changes after merging with empty provider'
-		);
+		Assert.areEqual(1, provider1.getToInsertChunks().get(toInsert[0]).size(), 'Expected no changes after merging with empty provider');
 	}
 
 	@IsTest

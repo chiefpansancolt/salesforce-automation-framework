@@ -23,12 +23,7 @@ public inherited sharing class TriggerData {
 	 * @param oldObjectsMap A map of SObject Ids to old SObject records.
 	 */
 	@SuppressWarnings('PMD.ExcessiveParameterList')
-	public TriggerData(
-		List<SObject> newObjects,
-		List<SObject> oldObjects,
-		Map<Id, SObject> newObjectsMap,
-		Map<Id, SObject> oldObjectsMap
-	) {
+	public TriggerData(List<SObject> newObjects, List<SObject> oldObjects, Map<Id, SObject> newObjectsMap, Map<Id, SObject> oldObjectsMap) {
 		this.newObjects = newObjects;
 		this.oldObjects = oldObjects;
 		this.newObjectsMap = newObjectsMap;
