@@ -11,8 +11,8 @@
                 <field>MasterLabel</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Required</behavior>
-                <field>Object_Name__c</field>
+                <behavior>Edit</behavior>
+                <field>Object_API_Name__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
