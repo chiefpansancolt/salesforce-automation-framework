@@ -101,7 +101,7 @@ public abstract inherited sharing class ADMLDataProvider implements IDMLDataProv
 	 * @return `List<String>`
 	 */
 	public virtual List<String> getToInsert() {
-		return getInsertAction().getObjectNames();
+		return getInsertAction().getObjectNameKeys();
 	}
 
 	/**
@@ -109,7 +109,7 @@ public abstract inherited sharing class ADMLDataProvider implements IDMLDataProv
 	 * @return `List<String>`
 	 */
 	public virtual List<String> getToUpdate() {
-		return getUpdateAction().getObjectNames();
+		return getUpdateAction().getObjectNameKeys();
 	}
 
 	/**
@@ -117,7 +117,7 @@ public abstract inherited sharing class ADMLDataProvider implements IDMLDataProv
 	 * @return `List<String>`
 	 */
 	public virtual List<String> getToDelete() {
-		return getDeleteAction().getObjectNames();
+		return getDeleteAction().getObjectNameKeys();
 	}
 
 	/**
@@ -241,26 +241,10 @@ public abstract inherited sharing class ADMLDataProvider implements IDMLDataProv
 		}
 
 		/**
-		 * Adds multiple operations to the list of operations.
-		 * @param objs The list of objects to be added.
-		 */
-		public void addOperations(List<Object> objs) {
-			operations.addAll(objs);
-		}
-
-		/**
-		 * Returns a list of operations.
-		 * @return `List<Object>`
-		 */
-		public List<Object> getOperations() {
-			return operations;
-		}
-
-		/**
 		 * Returns the object names for the chunks of operations.
 		 * @return `List<String>`
 		 */
-		public List<String> getObjectNames() {
+		public List<String> getObjectNameKeys() {
 			calculate();
 			return chunkObjectName;
 		}
@@ -297,7 +281,7 @@ public abstract inherited sharing class ADMLDataProvider implements IDMLDataProv
 		 * @param tp The SObject type.
 		 * @return `String`
 		 */
-		private String getObjectName(SObjectType tp) {
+		private String getObjectNameKey(SObjectType tp) {
 			String key = tp.getDescribe().getName();
 			if (objectChunkMap.containsKey(key)) {
 				key += objectChunkMap.size();
@@ -313,7 +297,7 @@ public abstract inherited sharing class ADMLDataProvider implements IDMLDataProv
 			for (Object obj : operations) {
 				if (obj instanceof List<SObject>) {
 					List<SObject> lst = (List<SObject>) obj;
-					objectChunkMap.put(getObjectName(lst[0].getSObjectType()), lst);
+					objectChunkMap.put(getObjectNameKey(lst[0].getSObjectType()), lst);
 				} else {
 					SObject sob = (SObject) obj;
 					SObjectType tp = sob.getSObjectType();
@@ -321,7 +305,7 @@ public abstract inherited sharing class ADMLDataProvider implements IDMLDataProv
 					if (tpl == null) {
 						tpl = new List<SObject>();
 						tpMap.put(tp, tpl);
-						objectChunkMap.put(getObjectName(tp), tpl);
+						objectChunkMap.put(getObjectNameKey(tp), tpl);
 					}
 					tpl.add(sob);
 				}

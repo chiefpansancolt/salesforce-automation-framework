@@ -125,7 +125,7 @@ public without sharing class TriggerPipeline extends ADMLDataProvider {
 			handlerFieldName +
 			' = TRUE ORDER BY Order__c ASC) FROM Trigger_Pipeline__mdt WHERE Is_Active__c = TRUE AND ' +
 			pipelineFieldName +
-			' = TRUE AND Object_Name__c = :objectName';
+			' = TRUE AND Object_API_Name__c = :objectName';
 
 		return Database.query(query, AccessLevel.SYSTEM_MODE);
 	}
