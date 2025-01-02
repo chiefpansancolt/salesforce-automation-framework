@@ -55,7 +55,7 @@ The Framework supports the below Trigger Contexts
 - After Delete
 - After Undelete
 
-2. Now you can create a Handler for your Trigger todo anything you are looking to do. Be sure to think about a couple things when determining how to breakdown your handlers to not have all your code in 1 Handler class. 
+2. Now you can create a Handler for your Trigger todo anything you are looking to do. Be sure to think about a couple things when determining how to breakdown your handlers to not have all your code in 1 Handler class.
 
 - Breakdown to handle a single related object like `TestObjectAccountHandler`
 - Breakdown to be sure a Query is not duplicated in multiple Handlers
@@ -174,9 +174,9 @@ Supported DML Utilities are:
 - addDeletes(List<sObject>)
 
 3. Once the file is created then you can create the Custom Metadata Type records for the Trigger Pipeline and Trigger Handler
-	1. Create Trigger Pipline record in Custom Metadata Type Trigger_Pipeline__mdt. Be sure to select and enable all contexts you have a pipeline for.
-	2. Now create a Trigger Handler in Custom Metadata Type Trigger_Handler__mdt and again check off all applicable Trigger Contexts to implement for said Handler.
-	3. Repeat step 2 for each new handler you are implementing.
+   1. Create Trigger Pipline record in Custom Metadata Type Trigger_Pipeline\_\_mdt. Be sure to select and enable all contexts you have a pipeline for.
+   2. Now create a Trigger Handler in Custom Metadata Type Trigger_Handler\_\_mdt and again check off all applicable Trigger Contexts to implement for said Handler.
+   3. Repeat step 2 for each new handler you are implementing.
 
 > [!TIP]
 > Check out example implementation of a Trigger Framework on the Account object in the [example folder](/example/trigger-pipeline).
