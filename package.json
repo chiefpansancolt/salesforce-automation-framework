@@ -20,7 +20,7 @@
 		"@salesforce/sfdx-lwc-jest": "^7.0.1",
 		"eslint": "^9.17.0",
 		"eslint-plugin-import": "^2.31.0",
-		"eslint-plugin-jest": "^28.10.0",
+		"eslint-plugin-jest": "^28.11.0",
 		"prettier": "^3.4.2",
 		"prettier-plugin-apex": "^2.2.2"
 	}
