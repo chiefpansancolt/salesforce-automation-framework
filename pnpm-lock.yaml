@@ -9,38 +9,38 @@ importers:
   .:
     devDependencies:
       '@lwc/eslint-plugin-lwc':
-        specifier: ^1.9.0
-        version: 1.9.0(@babel/eslint-parser@7.24.8(@babel/core@7.26.0)(eslint@9.17.0))(eslint@9.17.0)
+        specifier: ^2.1.0
+        version: 2.1.0(@babel/eslint-parser@7.24.8(@babel/core@7.26.0)(eslint@9.22.0))(eslint@9.22.0)
       '@prettier/plugin-xml':
         specifier: ^3.4.1
-        version: 3.4.1(prettier@3.4.2)
+        version: 3.4.1(prettier@3.5.3)
       '@salesforce/eslint-config-lwc':
-        specifier: ^3.6.0
-        version: 3.6.0(@lwc/eslint-plugin-lwc@1.9.0(@babel/eslint-parser@7.24.8(@babel/core@7.26.0)(eslint@9.17.0))(eslint@9.17.0))(@salesforce/eslint-plugin-lightning@1.0.0(eslint@9.17.0))(eslint-plugin-import@2.31.0(@typescript-eslint/parser@6.21.0(eslint@9.17.0)(typescript@5.6.3))(eslint@9.17.0))(eslint-plugin-jest@28.10.0(@typescript-eslint/eslint-plugin@6.21.0(@typescript-eslint/parser@6.21.0(eslint@9.17.0)(typescript@5.6.3))(eslint@9.17.0)(typescript@5.6.3))(eslint@9.17.0)(jest@29.7.0(@types/node@22.9.0))(typescript@5.6.3))(eslint@9.17.0)
+        specifier: ^3.7.1
+        version: 3.7.1(@lwc/eslint-plugin-lwc@2.1.0(@babel/eslint-parser@7.24.8(@babel/core@7.26.0)(eslint@9.22.0))(eslint@9.22.0))(@salesforce/eslint-plugin-lightning@1.0.1(eslint@9.22.0))(eslint-plugin-import@2.31.0(@typescript-eslint/parser@6.21.0(eslint@9.22.0)(typescript@5.6.3))(eslint@9.22.0))(eslint-plugin-jest@28.11.0(@typescript-eslint/eslint-plugin@6.21.0(@typescript-eslint/parser@6.21.0(eslint@9.22.0)(typescript@5.6.3))(eslint@9.22.0)(typescript@5.6.3))(eslint@9.22.0)(jest@29.7.0(@types/node@22.9.0))(typescript@5.6.3))(eslint@9.22.0)
       '@salesforce/eslint-plugin-aura':
         specifier: ^2.1.0
-        version: 2.1.0(eslint@9.17.0)
+        version: 2.1.0(eslint@9.22.0)
       '@salesforce/eslint-plugin-lightning':
-        specifier: ^1.0.0
-        version: 1.0.0(eslint@9.17.0)
+        specifier: ^1.0.1
+        version: 1.0.1(eslint@9.22.0)
       '@salesforce/sfdx-lwc-jest':
         specifier: ^7.0.1
         version: 7.0.1(@types/node@22.9.0)
       eslint:
-        specifier: ^9.17.0
-        version: 9.17.0
+        specifier: ^9.22.0
+        version: 9.22.0
       eslint-plugin-import:
         specifier: ^2.31.0
-        version: 2.31.0(@typescript-eslint/parser@6.21.0(eslint@9.17.0)(typescript@5.6.3))(eslint@9.17.0)
+        version: 2.31.0(@typescript-eslint/parser@6.21.0(eslint@9.22.0)(typescript@5.6.3))(eslint@9.22.0)
       eslint-plugin-jest:
-        specifier: ^28.10.0
-        version: 28.10.0(@typescript-eslint/eslint-plugin@6.21.0(@typescript-eslint/parser@6.21.0(eslint@9.17.0)(typescript@5.6.3))(eslint@9.17.0)(typescript@5.6.3))(eslint@9.17.0)(jest@29.7.0(@types/node@22.9.0))(typescript@5.6.3)
+        specifier: ^28.11.0
+        version: 28.11.0(@typescript-eslint/eslint-plugin@6.21.0(@typescript-eslint/parser@6.21.0(eslint@9.22.0)(typescript@5.6.3))(eslint@9.22.0)(typescript@5.6.3))(eslint@9.22.0)(jest@29.7.0(@types/node@22.9.0))(typescript@5.6.3)
       prettier:
-        specifier: ^3.4.2
-        version: 3.4.2
+        specifier: ^3.5.3
+        version: 3.5.3
       prettier-plugin-apex:
-        specifier: ^2.2.2
-        version: 2.2.2(prettier@3.4.2)
+        specifier: ^2.2.4
+        version: 2.2.4(prettier@3.5.3)
 
 packages:
 
@@ -342,28 +342,32 @@ packages:
     resolution: {integrity: sha512-CCZCDJuduB9OUkFkY2IgppNZMi2lBQgD2qzwXkEia16cge2pijY/aXi96CJMquDMn3nJdlPV1A5KrJEXwfLNzQ==}
     engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
 
-  '@eslint/config-array@0.19.0':
-    resolution: {integrity: sha512-zdHg2FPIFNKPdcHWtiNT+jEFCHYVplAXRDlQDyqy0zGx/q2parwh7brGJSiTxRk/TSMkbM//zt/f5CHgyTyaSQ==}
+  '@eslint/config-array@0.19.2':
+    resolution: {integrity: sha512-GNKqxfHG2ySmJOBSHg7LxeUx4xpuCoFjacmlCoYWEbaPXLwvfIjixRI12xCQZeULksQb23uiA8F40w5TojpV7w==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@eslint/core@0.9.0':
-    resolution: {integrity: sha512-7ATR9F0e4W85D/0w7cU0SNj7qkAexMG+bAHEZOjo9akvGuhHE2m7umzWzfnpa0XAg5Kxc1BWmtPMV67jJ+9VUg==}
+  '@eslint/config-helpers@0.1.0':
+    resolution: {integrity: sha512-kLrdPDJE1ckPo94kmPPf9Hfd0DU0Jw6oKYrhe+pwSC0iTUInmTa+w6fw8sGgcfkFJGNdWOUeOaDM4quW4a7OkA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@eslint/eslintrc@3.2.0':
-    resolution: {integrity: sha512-grOjVNN8P3hjJn/eIETF1wwd12DdnwFDoyceUJLYYdkpbwq3nLi+4fqrTAONx7XDALqlL220wC/RHSC/QTI/0w==}
+  '@eslint/core@0.12.0':
+    resolution: {integrity: sha512-cmrR6pytBuSMTaBweKoGMwu3EiHiEC+DoyupPmlZ0HxBJBtIxwe+j/E4XPIKNx+Q74c8lXKPwYawBf5glsTkHg==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@eslint/js@9.17.0':
-    resolution: {integrity: sha512-Sxc4hqcs1kTu0iID3kcZDW3JHq2a77HO9P8CP6YEA/FpH3Ll8UXE2r/86Rz9YJLKme39S9vU5OWNjC6Xl0Cr3w==}
+  '@eslint/eslintrc@3.3.0':
+    resolution: {integrity: sha512-yaVPAiNAalnCZedKLdR21GOGILMLKPyqSLWaAjQFvYA2i/ciDi8ArYVr69Anohb6cH2Ukhqti4aFnYyPm8wdwQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@eslint/object-schema@2.1.4':
-    resolution: {integrity: sha512-BsWiH1yFGjXXS2yvrf5LyuoSIIbPrGUWob917o+BTKuZ7qJdxX8aJLRxs1fS9n6r7vESrq1OUqb68dANcFXuQQ==}
+  '@eslint/js@9.22.0':
+    resolution: {integrity: sha512-vLFajx9o8d1/oL2ZkpMYbkLv8nDB6yaIwFNt7nI4+I80U/z03SxmfOMsLbvWr3p7C+Wnoh//aOu2pQW8cS0HCQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@eslint/plugin-kit@0.2.3':
-    resolution: {integrity: sha512-2b/g5hRmpbb1o4GnTZax9N9m0FXzz9OV42ZzI4rDDMDuHUqigAiQCEWChBWCY4ztAGVRjoWT19v0yMmc5/L5kA==}
+  '@eslint/object-schema@2.1.6':
+    resolution: {integrity: sha512-RBMg5FRL0I0gs51M/guSAj5/e14VQ4tpZnQNWwuDT66P14I43ItmPfIZRhO9fUVIPOAQXU47atlywZ/czoqFPA==}
+    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@eslint/plugin-kit@0.2.7':
+    resolution: {integrity: sha512-JubJ5B2pJ4k4yGxaNLdbjrnk9d/iDz6/q8wOilpIowd6PJPgaxCuHBnBszq7Ce2TyMrywm5r4PnKm6V3iiZF+g==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   '@hapi/hoek@9.3.0':
@@ -388,8 +392,8 @@ packages:
     resolution: {integrity: sha512-JBxkERygn7Bv/GbN5Rv8Ul6LVknS+5Bp6RgDC/O8gEBU/yeH5Ui5C/OlWrTb6qct7LjjfT6Re2NxB0ln0yYybA==}
     engines: {node: '>=18.18'}
 
-  '@humanwhocodes/retry@0.4.1':
-    resolution: {integrity: sha512-c7hNEllBlenFTHBky65mhq8WD2kbN9Q6gk0bTk8lSBvc554jpXSkST1iePudpt7+A/AQvuHs9EMqjHDXMY1lrA==}
+  '@humanwhocodes/retry@0.4.2':
+    resolution: {integrity: sha512-xeO57FpIu4p1Ri3Jq/EXq4ClRm86dVF2z/+kvFnyqVYRavTZmaFaUBbWCOuuTh0o/g7DSsk6kc2vrS4Vl5oPOQ==}
     engines: {node: '>=18.18'}
 
   '@istanbuljs/load-nyc-config@1.1.0':
@@ -504,8 +508,8 @@ packages:
   '@lwc/errors@8.8.0':
     resolution: {integrity: sha512-f5+jJCesmU0JWGzpYlZ1N+FMvwdJCcd9Bh1FWNShEy59X/FclOxQ0R7xVOte/+cKjgn+aYVvf98QXMwVM4frVQ==}
 
-  '@lwc/eslint-plugin-lwc@1.9.0':
-    resolution: {integrity: sha512-z2wEUvLanstSl9o7VT/HAI7uFWHkTApz8N1ZpRQtyh8Hg6UbBZKLrg+vMxDED1vZVLu256i2KgYUWysVQyO4tg==}
+  '@lwc/eslint-plugin-lwc@2.1.0':
+    resolution: {integrity: sha512-HtKerllRM3tXhkU0ZYotdVVn/FyZzFMOUna32mlyt07BHCKhVspdEDcB0jCa6m3uDN8miEffdmgiYISVrk2EOQ==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
       '@babel/eslint-parser': ^7
@@ -590,23 +594,23 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@prettier-apex/apex-ast-serializer-darwin-arm64@2.2.2':
-    resolution: {integrity: sha512-7L8jd+4RN87616X80mAhuZXRzvQmE/a2Fvwzp29z9gTN0hDWvAAzlmf6g5+a00daxTk9B/z+uDuHrgG7jIp7Ew==}
+  '@prettier-apex/apex-ast-serializer-darwin-arm64@2.2.4':
+    resolution: {integrity: sha512-18MuJS1iPTgEHS2gPS1b8MfHkj2cpO5IK+ojOs3v+jh0JC5lzumO1p/CjUXb2Bd5HopOC42dFIb1HXaax5JgGQ==}
     cpu: [arm64]
     os: [darwin]
 
-  '@prettier-apex/apex-ast-serializer-darwin-x64@2.2.2':
-    resolution: {integrity: sha512-rllsDy1qEK8EdcCMjOIG0eHxZPVYRMMW2qJ+3BWb7BIwtzMxZ4ikQrYEtdEtGHGOCt3ZFMzuKTTTG9DfP1ln0A==}
+  '@prettier-apex/apex-ast-serializer-darwin-x64@2.2.4':
+    resolution: {integrity: sha512-7ieK8FP7jGLaNDtOj3dAwP+8/Cu+0DM/HBn8ntR6fmMaKt6yr5rbq1BhIgdMCjbVTph0CUdE97Uli+AQEQvxeg==}
     cpu: [x64]
     os: [darwin]
 
-  '@prettier-apex/apex-ast-serializer-linux-x64@2.2.2':
-    resolution: {integrity: sha512-F1nFRebFaQPthfNsa39zN7qexts+hoX6f2qwDK3Fl4lsFIWpvXZv3lVEbCcFXDaHVeda9dYbZ0Dn6HtZAdXDWA==}
+  '@prettier-apex/apex-ast-serializer-linux-x64@2.2.4':
+    resolution: {integrity: sha512-/i+PyD5/ohorLJ+iz2XzR5E4htfJ/xmE37dlvvth2WxEN4m0YNOjMRDI2sE+1HjPTZdG+m+cJuqq1UYZWmLFTg==}
     cpu: [x64]
     os: [linux]
 
-  '@prettier-apex/apex-ast-serializer-win32-x64@2.2.2':
-    resolution: {integrity: sha512-8/tN8VgHPqBurvPC7Fyv1NJiKPMdAZMINOLWMChz4toCpysseu9RjKmdmBysfaO5G1Oy/WvxDusPmHUHdrP30Q==}
+  '@prettier-apex/apex-ast-serializer-win32-x64@2.2.4':
+    resolution: {integrity: sha512-SbT9ufY8OP976Owbefr/t8jPqZM51ps/gOavWjA/cu3+thOD4r50hMJ+Ke7NgTSwh11q2rPkadicCk/x2Y9HeA==}
     cpu: [x64]
     os: [win32]
 
@@ -618,11 +622,11 @@ packages:
   '@rtsao/scc@1.1.0':
     resolution: {integrity: sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==}
 
-  '@salesforce/eslint-config-lwc@3.6.0':
-    resolution: {integrity: sha512-k6F3LFKl6wvAmK31B/jn8aHtqo+kwl5q96DzhIcmL1qnCZj+AzH5gw9034j+c8279d8u8dC5QIUDU1iE3aCNCg==}
+  '@salesforce/eslint-config-lwc@3.7.1':
+    resolution: {integrity: sha512-ds6I/S+HQAXVXamFfdVQotROMJZrGL/dNYwnpLCcsa2FTaTt5jhgQ8E+B2f2+R8/g7xBiU234iuPV+2bxcwQmg==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
-      '@lwc/eslint-plugin-lwc': ^1.0.0
+      '@lwc/eslint-plugin-lwc': ^2.0.0
       '@salesforce/eslint-plugin-lightning': ^1.0.0
       eslint: ^7 || ^8
       eslint-plugin-import: '*'
@@ -634,8 +638,8 @@ packages:
     peerDependencies:
       eslint: ^7 || ^8
 
-  '@salesforce/eslint-plugin-lightning@1.0.0':
-    resolution: {integrity: sha512-zk0PKXAcHKHepAG2EOSWlkOTxQM0Aw1CT6+MUxJcM42fCDwH/yPPpGkG3CWtRfmVViODGOwU9ywU2wlkAYcvUQ==}
+  '@salesforce/eslint-plugin-lightning@1.0.1':
+    resolution: {integrity: sha512-oyUVSNUA0WkkQr3BRtcAYhYotzIpqZtfMpUVMhROPN8YjDGu6CzCoC3/1i4ySIevgmH3J83KypwoqvRfoQf8Ww==}
     peerDependencies:
       eslint: ^7 || ^8
 
@@ -1265,8 +1269,8 @@ packages:
       '@typescript-eslint/parser':
         optional: true
 
-  eslint-plugin-jest@28.10.0:
-    resolution: {integrity: sha512-hyMWUxkBH99HpXT3p8hc7REbEZK3D+nk8vHXGgpB+XXsi0gO4PxMSP+pjfUzb67GnV9yawV9a53eUmcde1CCZA==}
+  eslint-plugin-jest@28.11.0:
+    resolution: {integrity: sha512-QAfipLcNCWLVocVbZW8GimKn5p5iiMcgGbRzz8z/P5q7xw+cNEpYqyzFMtIF/ZgF2HLOyy+dYBut+DoYolvqig==}
     engines: {node: ^16.10.0 || ^18.12.0 || >=20.0.0}
     peerDependencies:
       '@typescript-eslint/eslint-plugin': ^6.0.0 || ^7.0.0 || ^8.0.0
@@ -1285,8 +1289,8 @@ packages:
     resolution: {integrity: sha512-2NxwbF/hZ0KpepYN0cNbo+FN6XoK7GaHlQhgx/hIZl6Va0bF45RQOOwhLIy8lQDbuCiadSLCBnH2CFYquit5bw==}
     engines: {node: '>=8.0.0'}
 
-  eslint-scope@8.2.0:
-    resolution: {integrity: sha512-PHlWUfG6lvPc3yvP5A4PNyBL1W8fkDUccmI21JUu/+GKZBoH/W5u6usENXUrWFRsyoW5ACUjFGgAFQp5gUlb/A==}
+  eslint-scope@8.3.0:
+    resolution: {integrity: sha512-pUNxi75F8MJ/GdeKtVLSbYg4ZI34J6C0C7sbL4YOp2exGwen7ZsuBqKzUhXd0qMQ362yET3z+uPwKeg/0C2XCQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   eslint-visitor-keys@2.1.0:
@@ -1301,8 +1305,8 @@ packages:
     resolution: {integrity: sha512-UyLnSehNt62FFhSwjZlHmeokpRK59rcz29j+F1/aDgbkbRTk7wIc9XzdoasMUbRNKDM0qQt/+BJ4BrpFeABemw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  eslint@9.17.0:
-    resolution: {integrity: sha512-evtlNcpJg+cZLcnVKwsai8fExnqjGPicK7gnUtlNuzu+Fv9bI0aLpND5T44VLQtoMEnI57LoXO9XAkIXwohKrA==}
+  eslint@9.22.0:
+    resolution: {integrity: sha512-9V/QURhsRN40xuHXWjV64yvrzMjcz7ZyNoF2jJFmy9j/SLk0u1OLSZgXi28MrXjymnjEGSR80WCdab3RGMDveQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     hasBin: true
     peerDependencies:
@@ -1367,6 +1371,10 @@ packages:
 
   fast-levenshtein@2.0.6:
     resolution: {integrity: sha512-DCXu6Ifhqcks7TZKY3Hxp3y6qphY5SJZmrWMDrKcERSOXWQdMhU9Ig/PYrzyw/ul9jOIyh0N4M0tbC5hodg8dw==}
+
+  fast-xml-parser@4.5.3:
+    resolution: {integrity: sha512-RKihhV+SHsIUGXObeVy9AXiBbFwkVk7Syp8XgwN5U3JV416+Gwp/GO9i0JYKmikykgz/UHRrrV4ROuZEo/T0ig==}
+    hasBin: true
 
   fastq@1.17.1:
     resolution: {integrity: sha512-sRVD3lWVIXWg6By68ZN7vho9a1pQcN/WBFaAAsDDFzlJjvoGx0P8z7V1t72grFJfJhu3YPZBuu25f7Kaw2jN1w==}
@@ -2145,14 +2153,14 @@ packages:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
 
-  prettier-plugin-apex@2.2.2:
-    resolution: {integrity: sha512-3x70d5iwzOE+JXz5MG0PS61i2vQZYlCA2PmLd5RDfwD2Zpp3kQWs9U9UhO+k+hJEaG3nUCRXM19a2GPQ7CUL/g==}
+  prettier-plugin-apex@2.2.4:
+    resolution: {integrity: sha512-/mqsKuQ1TbGzav+WKi0EsOl+Ttappwh69KM5M04vTQXznk70jrNmEGNaCK3KvvVDMDwLSYCg8bkc9HsumWVfqg==}
     hasBin: true
     peerDependencies:
       prettier: ^3.0.0
 
-  prettier@3.4.2:
-    resolution: {integrity: sha512-e9MewbtFo+Fevyuxn/4rrcDAaq0IYxPGLvObpQjiZBMAzB9IGmzlnG9RZy3FFas+eBMu2vA0CszMeduow5dIuQ==}
+  prettier@3.5.3:
+    resolution: {integrity: sha512-QQtaxnoDJeAkDvDKWCLiwIXkTgRhwYDEQCghU9Z6q03iyek/rxRh/2lC3HB7P8sWT2xC/y5JDctPLBIGzHKbhw==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -2350,6 +2358,9 @@ packages:
   strip-json-comments@3.1.1:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
+
+  strnum@1.1.2:
+    resolution: {integrity: sha512-vrN+B7DBIoTTZjnPNewwhx6cBA/H+IS7rfW68n7XxC1y7uoiGQBxaKzqucGUgavX15dJgiGztLJ8vxuEzwqBdA==}
 
   supports-color@7.2.0:
     resolution: {integrity: sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==}
@@ -2611,19 +2622,19 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/eslint-parser@7.24.8(@babel/core@7.24.9)(eslint@9.17.0)':
+  '@babel/eslint-parser@7.24.8(@babel/core@7.24.9)(eslint@9.22.0)':
     dependencies:
       '@babel/core': 7.24.9
       '@nicolo-ribaudo/eslint-scope-5-internals': 5.1.1-v1
-      eslint: 9.17.0
+      eslint: 9.22.0
       eslint-visitor-keys: 2.1.0
       semver: 6.3.1
 
-  '@babel/eslint-parser@7.24.8(@babel/core@7.26.0)(eslint@9.17.0)':
+  '@babel/eslint-parser@7.24.8(@babel/core@7.26.0)(eslint@9.22.0)':
     dependencies:
       '@babel/core': 7.26.0
       '@nicolo-ribaudo/eslint-scope-5-internals': 5.1.1-v1
-      eslint: 9.17.0
+      eslint: 9.22.0
       eslint-visitor-keys: 2.1.0
       semver: 6.3.1
 
@@ -2955,24 +2966,28 @@ snapshots:
 
   '@bcoe/v8-coverage@0.2.3': {}
 
-  '@eslint-community/eslint-utils@4.4.1(eslint@9.17.0)':
+  '@eslint-community/eslint-utils@4.4.1(eslint@9.22.0)':
     dependencies:
-      eslint: 9.17.0
+      eslint: 9.22.0
       eslint-visitor-keys: 3.4.3
 
   '@eslint-community/regexpp@4.12.1': {}
 
-  '@eslint/config-array@0.19.0':
+  '@eslint/config-array@0.19.2':
     dependencies:
-      '@eslint/object-schema': 2.1.4
+      '@eslint/object-schema': 2.1.6
       debug: 4.3.7
       minimatch: 3.1.2
     transitivePeerDependencies:
       - supports-color
 
-  '@eslint/core@0.9.0': {}
+  '@eslint/config-helpers@0.1.0': {}
 
-  '@eslint/eslintrc@3.2.0':
+  '@eslint/core@0.12.0':
+    dependencies:
+      '@types/json-schema': 7.0.15
+
+  '@eslint/eslintrc@3.3.0':
     dependencies:
       ajv: 6.12.6
       debug: 4.3.7
@@ -2986,12 +3001,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@eslint/js@9.17.0': {}
+  '@eslint/js@9.22.0': {}
 
-  '@eslint/object-schema@2.1.4': {}
+  '@eslint/object-schema@2.1.6': {}
 
-  '@eslint/plugin-kit@0.2.3':
+  '@eslint/plugin-kit@0.2.7':
     dependencies:
+      '@eslint/core': 0.12.0
       levn: 0.4.1
 
   '@hapi/hoek@9.3.0': {}
@@ -3011,7 +3027,7 @@ snapshots:
 
   '@humanwhocodes/retry@0.3.1': {}
 
-  '@humanwhocodes/retry@0.4.1': {}
+  '@humanwhocodes/retry@0.4.2': {}
 
   '@istanbuljs/load-nyc-config@1.1.0':
     dependencies:
@@ -3242,10 +3258,11 @@ snapshots:
 
   '@lwc/errors@8.8.0': {}
 
-  '@lwc/eslint-plugin-lwc@1.9.0(@babel/eslint-parser@7.24.8(@babel/core@7.26.0)(eslint@9.17.0))(eslint@9.17.0)':
+  '@lwc/eslint-plugin-lwc@2.1.0(@babel/eslint-parser@7.24.8(@babel/core@7.26.0)(eslint@9.22.0))(eslint@9.22.0)':
     dependencies:
-      '@babel/eslint-parser': 7.24.8(@babel/core@7.26.0)(eslint@9.17.0)
-      eslint: 9.17.0
+      '@babel/eslint-parser': 7.24.8(@babel/core@7.26.0)(eslint@9.22.0)
+      eslint: 9.22.0
+      fast-xml-parser: 4.5.3
       globals: 13.24.0
       minimatch: 9.0.5
 
@@ -3353,47 +3370,47 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.17.1
 
-  '@prettier-apex/apex-ast-serializer-darwin-arm64@2.2.2':
+  '@prettier-apex/apex-ast-serializer-darwin-arm64@2.2.4':
     optional: true
 
-  '@prettier-apex/apex-ast-serializer-darwin-x64@2.2.2':
+  '@prettier-apex/apex-ast-serializer-darwin-x64@2.2.4':
     optional: true
 
-  '@prettier-apex/apex-ast-serializer-linux-x64@2.2.2':
+  '@prettier-apex/apex-ast-serializer-linux-x64@2.2.4':
     optional: true
 
-  '@prettier-apex/apex-ast-serializer-win32-x64@2.2.2':
+  '@prettier-apex/apex-ast-serializer-win32-x64@2.2.4':
     optional: true
 
-  '@prettier/plugin-xml@3.4.1(prettier@3.4.2)':
+  '@prettier/plugin-xml@3.4.1(prettier@3.5.3)':
     dependencies:
       '@xml-tools/parser': 1.0.11
-      prettier: 3.4.2
+      prettier: 3.5.3
 
   '@rtsao/scc@1.1.0': {}
 
-  '@salesforce/eslint-config-lwc@3.6.0(@lwc/eslint-plugin-lwc@1.9.0(@babel/eslint-parser@7.24.8(@babel/core@7.26.0)(eslint@9.17.0))(eslint@9.17.0))(@salesforce/eslint-plugin-lightning@1.0.0(eslint@9.17.0))(eslint-plugin-import@2.31.0(@typescript-eslint/parser@6.21.0(eslint@9.17.0)(typescript@5.6.3))(eslint@9.17.0))(eslint-plugin-jest@28.10.0(@typescript-eslint/eslint-plugin@6.21.0(@typescript-eslint/parser@6.21.0(eslint@9.17.0)(typescript@5.6.3))(eslint@9.17.0)(typescript@5.6.3))(eslint@9.17.0)(jest@29.7.0(@types/node@22.9.0))(typescript@5.6.3))(eslint@9.17.0)':
+  '@salesforce/eslint-config-lwc@3.7.1(@lwc/eslint-plugin-lwc@2.1.0(@babel/eslint-parser@7.24.8(@babel/core@7.26.0)(eslint@9.22.0))(eslint@9.22.0))(@salesforce/eslint-plugin-lightning@1.0.1(eslint@9.22.0))(eslint-plugin-import@2.31.0(@typescript-eslint/parser@6.21.0(eslint@9.22.0)(typescript@5.6.3))(eslint@9.22.0))(eslint-plugin-jest@28.11.0(@typescript-eslint/eslint-plugin@6.21.0(@typescript-eslint/parser@6.21.0(eslint@9.22.0)(typescript@5.6.3))(eslint@9.22.0)(typescript@5.6.3))(eslint@9.22.0)(jest@29.7.0(@types/node@22.9.0))(typescript@5.6.3))(eslint@9.22.0)':
     dependencies:
       '@babel/core': 7.24.9
-      '@babel/eslint-parser': 7.24.8(@babel/core@7.24.9)(eslint@9.17.0)
-      '@lwc/eslint-plugin-lwc': 1.9.0(@babel/eslint-parser@7.24.8(@babel/core@7.26.0)(eslint@9.17.0))(eslint@9.17.0)
-      '@salesforce/eslint-plugin-lightning': 1.0.0(eslint@9.17.0)
-      eslint: 9.17.0
-      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@6.21.0(eslint@9.17.0)(typescript@5.6.3))(eslint@9.17.0)
-      eslint-plugin-jest: 28.10.0(@typescript-eslint/eslint-plugin@6.21.0(@typescript-eslint/parser@6.21.0(eslint@9.17.0)(typescript@5.6.3))(eslint@9.17.0)(typescript@5.6.3))(eslint@9.17.0)(jest@29.7.0(@types/node@22.9.0))(typescript@5.6.3)
+      '@babel/eslint-parser': 7.24.8(@babel/core@7.24.9)(eslint@9.22.0)
+      '@lwc/eslint-plugin-lwc': 2.1.0(@babel/eslint-parser@7.24.8(@babel/core@7.26.0)(eslint@9.22.0))(eslint@9.22.0)
+      '@salesforce/eslint-plugin-lightning': 1.0.1(eslint@9.22.0)
+      eslint: 9.22.0
+      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@6.21.0(eslint@9.22.0)(typescript@5.6.3))(eslint@9.22.0)
+      eslint-plugin-jest: 28.11.0(@typescript-eslint/eslint-plugin@6.21.0(@typescript-eslint/parser@6.21.0(eslint@9.22.0)(typescript@5.6.3))(eslint@9.22.0)(typescript@5.6.3))(eslint@9.22.0)(jest@29.7.0(@types/node@22.9.0))(typescript@5.6.3)
       eslint-restricted-globals: 0.2.0
       semver: 7.6.3
     transitivePeerDependencies:
       - supports-color
 
-  '@salesforce/eslint-plugin-aura@2.1.0(eslint@9.17.0)':
+  '@salesforce/eslint-plugin-aura@2.1.0(eslint@9.22.0)':
     dependencies:
-      eslint: 9.17.0
-      eslint-plugin-compat: 4.2.0(eslint@9.17.0)
+      eslint: 9.22.0
+      eslint-plugin-compat: 4.2.0(eslint@9.22.0)
 
-  '@salesforce/eslint-plugin-lightning@1.0.0(eslint@9.17.0)':
+  '@salesforce/eslint-plugin-lightning@1.0.1(eslint@9.22.0)':
     dependencies:
-      eslint: 9.17.0
+      eslint: 9.22.0
 
   '@salesforce/sfdx-lwc-jest@7.0.1(@types/node@22.9.0)':
     dependencies:
@@ -3514,16 +3531,16 @@ snapshots:
     dependencies:
       '@types/yargs-parser': 21.0.3
 
-  '@typescript-eslint/eslint-plugin@6.21.0(@typescript-eslint/parser@6.21.0(eslint@9.17.0)(typescript@5.6.3))(eslint@9.17.0)(typescript@5.6.3)':
+  '@typescript-eslint/eslint-plugin@6.21.0(@typescript-eslint/parser@6.21.0(eslint@9.22.0)(typescript@5.6.3))(eslint@9.22.0)(typescript@5.6.3)':
     dependencies:
       '@eslint-community/regexpp': 4.12.1
-      '@typescript-eslint/parser': 6.21.0(eslint@9.17.0)(typescript@5.6.3)
+      '@typescript-eslint/parser': 6.21.0(eslint@9.22.0)(typescript@5.6.3)
       '@typescript-eslint/scope-manager': 6.21.0
-      '@typescript-eslint/type-utils': 6.21.0(eslint@9.17.0)(typescript@5.6.3)
-      '@typescript-eslint/utils': 6.21.0(eslint@9.17.0)(typescript@5.6.3)
+      '@typescript-eslint/type-utils': 6.21.0(eslint@9.22.0)(typescript@5.6.3)
+      '@typescript-eslint/utils': 6.21.0(eslint@9.22.0)(typescript@5.6.3)
       '@typescript-eslint/visitor-keys': 6.21.0
       debug: 4.3.7
-      eslint: 9.17.0
+      eslint: 9.22.0
       graphemer: 1.4.0
       ignore: 5.3.2
       natural-compare: 1.4.0
@@ -3535,14 +3552,14 @@ snapshots:
       - supports-color
     optional: true
 
-  '@typescript-eslint/parser@6.21.0(eslint@9.17.0)(typescript@5.6.3)':
+  '@typescript-eslint/parser@6.21.0(eslint@9.22.0)(typescript@5.6.3)':
     dependencies:
       '@typescript-eslint/scope-manager': 6.21.0
       '@typescript-eslint/types': 6.21.0
       '@typescript-eslint/typescript-estree': 6.21.0(typescript@5.6.3)
       '@typescript-eslint/visitor-keys': 6.21.0
       debug: 4.3.7
-      eslint: 9.17.0
+      eslint: 9.22.0
     optionalDependencies:
       typescript: 5.6.3
     transitivePeerDependencies:
@@ -3560,12 +3577,12 @@ snapshots:
       '@typescript-eslint/types': 8.14.0
       '@typescript-eslint/visitor-keys': 8.14.0
 
-  '@typescript-eslint/type-utils@6.21.0(eslint@9.17.0)(typescript@5.6.3)':
+  '@typescript-eslint/type-utils@6.21.0(eslint@9.22.0)(typescript@5.6.3)':
     dependencies:
       '@typescript-eslint/typescript-estree': 6.21.0(typescript@5.6.3)
-      '@typescript-eslint/utils': 6.21.0(eslint@9.17.0)(typescript@5.6.3)
+      '@typescript-eslint/utils': 6.21.0(eslint@9.22.0)(typescript@5.6.3)
       debug: 4.3.7
-      eslint: 9.17.0
+      eslint: 9.22.0
       ts-api-utils: 1.4.0(typescript@5.6.3)
     optionalDependencies:
       typescript: 5.6.3
@@ -3609,28 +3626,28 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@typescript-eslint/utils@6.21.0(eslint@9.17.0)(typescript@5.6.3)':
+  '@typescript-eslint/utils@6.21.0(eslint@9.22.0)(typescript@5.6.3)':
     dependencies:
-      '@eslint-community/eslint-utils': 4.4.1(eslint@9.17.0)
+      '@eslint-community/eslint-utils': 4.4.1(eslint@9.22.0)
       '@types/json-schema': 7.0.15
       '@types/semver': 7.5.8
       '@typescript-eslint/scope-manager': 6.21.0
       '@typescript-eslint/types': 6.21.0
       '@typescript-eslint/typescript-estree': 6.21.0(typescript@5.6.3)
-      eslint: 9.17.0
+      eslint: 9.22.0
       semver: 7.6.3
     transitivePeerDependencies:
       - supports-color
       - typescript
     optional: true
 
-  '@typescript-eslint/utils@8.14.0(eslint@9.17.0)(typescript@5.6.3)':
+  '@typescript-eslint/utils@8.14.0(eslint@9.22.0)(typescript@5.6.3)':
     dependencies:
-      '@eslint-community/eslint-utils': 4.4.1(eslint@9.17.0)
+      '@eslint-community/eslint-utils': 4.4.1(eslint@9.22.0)
       '@typescript-eslint/scope-manager': 8.14.0
       '@typescript-eslint/types': 8.14.0
       '@typescript-eslint/typescript-estree': 8.14.0(typescript@5.6.3)
-      eslint: 9.17.0
+      eslint: 9.22.0
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -4155,28 +4172,28 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-module-utils@2.12.0(@typescript-eslint/parser@6.21.0(eslint@9.17.0)(typescript@5.6.3))(eslint-import-resolver-node@0.3.9)(eslint@9.17.0):
+  eslint-module-utils@2.12.0(@typescript-eslint/parser@6.21.0(eslint@9.22.0)(typescript@5.6.3))(eslint-import-resolver-node@0.3.9)(eslint@9.22.0):
     dependencies:
       debug: 3.2.7
     optionalDependencies:
-      '@typescript-eslint/parser': 6.21.0(eslint@9.17.0)(typescript@5.6.3)
-      eslint: 9.17.0
+      '@typescript-eslint/parser': 6.21.0(eslint@9.22.0)(typescript@5.6.3)
+      eslint: 9.22.0
       eslint-import-resolver-node: 0.3.9
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-compat@4.2.0(eslint@9.17.0):
+  eslint-plugin-compat@4.2.0(eslint@9.22.0):
     dependencies:
       '@mdn/browser-compat-data': 5.6.15
       ast-metadata-inferer: 0.8.0
       browserslist: 4.24.2
       caniuse-lite: 1.0.30001680
-      eslint: 9.17.0
+      eslint: 9.22.0
       find-up: 5.0.0
       lodash.memoize: 4.1.2
       semver: 7.6.3
 
-  eslint-plugin-import@2.31.0(@typescript-eslint/parser@6.21.0(eslint@9.17.0)(typescript@5.6.3))(eslint@9.17.0):
+  eslint-plugin-import@2.31.0(@typescript-eslint/parser@6.21.0(eslint@9.22.0)(typescript@5.6.3))(eslint@9.22.0):
     dependencies:
       '@rtsao/scc': 1.1.0
       array-includes: 3.1.8
@@ -4185,9 +4202,9 @@ snapshots:
       array.prototype.flatmap: 1.3.2
       debug: 3.2.7
       doctrine: 2.1.0
-      eslint: 9.17.0
+      eslint: 9.22.0
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.12.0(@typescript-eslint/parser@6.21.0(eslint@9.17.0)(typescript@5.6.3))(eslint-import-resolver-node@0.3.9)(eslint@9.17.0)
+      eslint-module-utils: 2.12.0(@typescript-eslint/parser@6.21.0(eslint@9.22.0)(typescript@5.6.3))(eslint-import-resolver-node@0.3.9)(eslint@9.22.0)
       hasown: 2.0.2
       is-core-module: 2.15.1
       is-glob: 4.0.3
@@ -4199,18 +4216,18 @@ snapshots:
       string.prototype.trimend: 1.0.8
       tsconfig-paths: 3.15.0
     optionalDependencies:
-      '@typescript-eslint/parser': 6.21.0(eslint@9.17.0)(typescript@5.6.3)
+      '@typescript-eslint/parser': 6.21.0(eslint@9.22.0)(typescript@5.6.3)
     transitivePeerDependencies:
       - eslint-import-resolver-typescript
       - eslint-import-resolver-webpack
       - supports-color
 
-  eslint-plugin-jest@28.10.0(@typescript-eslint/eslint-plugin@6.21.0(@typescript-eslint/parser@6.21.0(eslint@9.17.0)(typescript@5.6.3))(eslint@9.17.0)(typescript@5.6.3))(eslint@9.17.0)(jest@29.7.0(@types/node@22.9.0))(typescript@5.6.3):
+  eslint-plugin-jest@28.11.0(@typescript-eslint/eslint-plugin@6.21.0(@typescript-eslint/parser@6.21.0(eslint@9.22.0)(typescript@5.6.3))(eslint@9.22.0)(typescript@5.6.3))(eslint@9.22.0)(jest@29.7.0(@types/node@22.9.0))(typescript@5.6.3):
     dependencies:
-      '@typescript-eslint/utils': 8.14.0(eslint@9.17.0)(typescript@5.6.3)
-      eslint: 9.17.0
+      '@typescript-eslint/utils': 8.14.0(eslint@9.22.0)(typescript@5.6.3)
+      eslint: 9.22.0
     optionalDependencies:
-      '@typescript-eslint/eslint-plugin': 6.21.0(@typescript-eslint/parser@6.21.0(eslint@9.17.0)(typescript@5.6.3))(eslint@9.17.0)(typescript@5.6.3)
+      '@typescript-eslint/eslint-plugin': 6.21.0(@typescript-eslint/parser@6.21.0(eslint@9.22.0)(typescript@5.6.3))(eslint@9.22.0)(typescript@5.6.3)
       jest: 29.7.0(@types/node@22.9.0)
     transitivePeerDependencies:
       - supports-color
@@ -4223,7 +4240,7 @@ snapshots:
       esrecurse: 4.3.0
       estraverse: 4.3.0
 
-  eslint-scope@8.2.0:
+  eslint-scope@8.3.0:
     dependencies:
       esrecurse: 4.3.0
       estraverse: 5.3.0
@@ -4234,18 +4251,19 @@ snapshots:
 
   eslint-visitor-keys@4.2.0: {}
 
-  eslint@9.17.0:
+  eslint@9.22.0:
     dependencies:
-      '@eslint-community/eslint-utils': 4.4.1(eslint@9.17.0)
+      '@eslint-community/eslint-utils': 4.4.1(eslint@9.22.0)
       '@eslint-community/regexpp': 4.12.1
-      '@eslint/config-array': 0.19.0
-      '@eslint/core': 0.9.0
-      '@eslint/eslintrc': 3.2.0
-      '@eslint/js': 9.17.0
-      '@eslint/plugin-kit': 0.2.3
+      '@eslint/config-array': 0.19.2
+      '@eslint/config-helpers': 0.1.0
+      '@eslint/core': 0.12.0
+      '@eslint/eslintrc': 3.3.0
+      '@eslint/js': 9.22.0
+      '@eslint/plugin-kit': 0.2.7
       '@humanfs/node': 0.16.6
       '@humanwhocodes/module-importer': 1.0.1
-      '@humanwhocodes/retry': 0.4.1
+      '@humanwhocodes/retry': 0.4.2
       '@types/estree': 1.0.6
       '@types/json-schema': 7.0.15
       ajv: 6.12.6
@@ -4253,7 +4271,7 @@ snapshots:
       cross-spawn: 7.0.6
       debug: 4.3.7
       escape-string-regexp: 4.0.0
-      eslint-scope: 8.2.0
+      eslint-scope: 8.3.0
       eslint-visitor-keys: 4.2.0
       espree: 10.3.0
       esquery: 1.6.0
@@ -4335,6 +4353,10 @@ snapshots:
   fast-json-stable-stringify@2.1.0: {}
 
   fast-levenshtein@2.0.6: {}
+
+  fast-xml-parser@4.5.3:
+    dependencies:
+      strnum: 1.1.2
 
   fastq@1.17.1:
     dependencies:
@@ -5302,20 +5324,20 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
-  prettier-plugin-apex@2.2.2(prettier@3.4.2):
+  prettier-plugin-apex@2.2.4(prettier@3.5.3):
     dependencies:
       jest-docblock: 29.7.0
-      prettier: 3.4.2
+      prettier: 3.5.3
       wait-on: 8.0.1
     optionalDependencies:
-      '@prettier-apex/apex-ast-serializer-darwin-arm64': 2.2.2
-      '@prettier-apex/apex-ast-serializer-darwin-x64': 2.2.2
-      '@prettier-apex/apex-ast-serializer-linux-x64': 2.2.2
-      '@prettier-apex/apex-ast-serializer-win32-x64': 2.2.2
+      '@prettier-apex/apex-ast-serializer-darwin-arm64': 2.2.4
+      '@prettier-apex/apex-ast-serializer-darwin-x64': 2.2.4
+      '@prettier-apex/apex-ast-serializer-linux-x64': 2.2.4
+      '@prettier-apex/apex-ast-serializer-win32-x64': 2.2.4
     transitivePeerDependencies:
       - debug
 
-  prettier@3.4.2: {}
+  prettier@3.5.3: {}
 
   pretty-format@29.7.0:
     dependencies:
@@ -5509,6 +5531,8 @@ snapshots:
   strip-final-newline@2.0.0: {}
 
   strip-json-comments@3.1.1: {}
+
+  strnum@1.1.2: {}
 
   supports-color@7.2.0:
     dependencies:
