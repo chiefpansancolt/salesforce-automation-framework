@@ -22,6 +22,6 @@
 		"eslint-plugin-import": "^2.31.0",
 		"eslint-plugin-jest": "^28.11.0",
 		"prettier": "^3.5.3",
-		"prettier-plugin-apex": "^2.2.4"
+		"prettier-plugin-apex": "^2.2.6"
 	}
 }
