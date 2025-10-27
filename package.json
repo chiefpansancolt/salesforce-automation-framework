@@ -12,7 +12,7 @@
 		"update-dependencies": "ncu -u && pnpm install"
 	},
 	"devDependencies": {
-		"@lwc/eslint-plugin-lwc": "^3.0.0",
+		"@lwc/eslint-plugin-lwc": "^3.3.0",
 		"@prettier/plugin-xml": "^3.4.1",
 		"@salesforce/eslint-config-lwc": "^4.0.0",
 		"@salesforce/eslint-plugin-aura": "^3.0.0",
