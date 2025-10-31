@@ -1,7 +1,7 @@
 {
 	"name": "salesforce-automation-framework",
 	"private": false,
-	"version": "1.0.0",
+	"version": "1.0.3",
 	"description": "Salesforce Automation Framework",
 	"scripts": {
 		"test": "sf apex run test -l RunLocalTests -c -y -v -w 30 -d .sfdx/tools/testresults/apex",
