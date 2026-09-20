@@ -18,12 +18,12 @@ jobs:
 
     steps:
       - name: 📚 Checkout Main Code 📚
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: 🛠️ Run Setup 🛠️
         uses: ./.github/actions/setup
 
       - name: 🚀 Run linters 🚀
-        uses: wearerequired/lint-action@v2
+        uses: wearerequired/lint-action@v3
         with:
           prettier: true
